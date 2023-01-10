@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Connect With Training</title>
+<meta name="description" content="description">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Favicon -->
+
+<!-- Plugins CSS -->
+<link rel="stylesheet" href="assets/css/plugins.css">
+<!-- Bootstap CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<!-- Main Style CSS -->
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body class="template-index belle template-index-belle">
+<div id="pre-loader">
+    <img src="assets/images/loader.gif" alt="Loading..." />
+</div>
+<div class="pageWrapper">
+    <!--Search Form Drawer-->
+    <div class="search">
+        <div class="search__form">
+            <form class="search-bar__form" action="#">
+                <button class="go-btn search__button" type="submit"><i class="icon anm anm-search-l"></i></button>
+                <input class="search__input" type="search" name="q" value="" placeholder="Search entire store..." aria-label="Search" autocomplete="off">
+            </form>
+            <button type="button" class="search-trigger close-btn"><i class="anm anm-times-l"></i></button>
+        </div>
+    </div>
+    <!--End Search Form Drawer-->
+    <!--Top Header-->
+    <div class="top-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-right">
+                    <div class="currency-picker">
+                        <span class="selected-currency">USD</span>
+                        <ul id="currencies">
+                            <li data-currency="INR" class="">INR</li>
+                            <li data-currency="GBP" class="">GBP</li>
+                            <li data-currency="CAD" class="">CAD</li>
+                            <li data-currency="USD" class="selected">USD</li>
+                            <li data-currency="AUD" class="">AUD</li>
+                            <li data-currency="EUR" class="">EUR</li>
+                            <li data-currency="JPY" class="">JPY</li>
+                        </ul>
+                    </div>
+                    <div class="language-dropdown">
+                        <span class="language-dd">English</span>
+                        <ul id="language">
+                            <li class="">German</li>
+                            <li class="">French</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Top Header-->
+    <!--Header-->
+    <div class="header-wrap classicHeader animated d-flex">
+        <div class="container-fluid">        
+            <div class="row align-items-center">
+                <!--Desktop Logo-->
+                <div class="logo col-md-2 col-lg-4 d-none d-lg-block">
+                    <a href="index.html">
+                        <img class="logo-img" src="assets/images/logo.png" alt="" />
+                    </a>
+                </div>
+                <!--End Desktop Logo-->
+                <div class="col-2 col-sm-3 col-md-3 col-lg-8">
+                    <div class="d-block d-lg-none">
+                        <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
+                            <i class="icon anm anm-times-l"></i>
+                            <i class="anm anm-bars-r"></i>
+                        </button>
+                    </div>
+                    <!--Desktop Menu-->
+                    <nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
+                        <ul id="siteNav" class="site-nav medium center hidearrow">
+                            <li class="lvl1 parent megamenu"><a href="#">How it works</a></li>
+                        
+                        <li class="lvl1 parent dropdown"><a href="#">Courses <i class="fa fa-arrow-down"></i></a>
+                          <ul class="dropdown">
+                            <li><a href="#" class="site-nav"><i class="fa fa-graduation-cap"></i> online Course</a></li>
+                            <li><a href="#" class="site-nav"><i class="fa fa-users"></i> Onsight Classroom </a></li>
+                            <li><a href="#" class="site-nav"><i class="fa fa-eercast"></i> Your Pace</a></li>
+                            <li><a href="#" class="site-nav"><i class="fa fa-credit-card"></i> Payment Plan</a></li>
+                          </ul>
+                        </li>
+                        <li class="lvl1"><a href="#"><b>Get more</b> </a></li>
+                        <li class="lvl1"><a href="#"><b>I'm In!</b> </a></li>
+                        <li class="1v11">
+                            <div class="site-cart desktop" style="padding: 0px 20px;">
+                                <a href="#;" class="site-header__cart" title="Cart">
+                                    <i class="icon anm anm-bag-l"></i>
+                                    <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
+                                </a>
+                                <!--Minicart Popup-->
+                                <div id="header-cart" class="block block-cart">
+                                    <ul class="mini-products-list">
+                                        <li class="item">
+                                            <a class="product-image" href="#">
+                                                <img src="assets/images/product-images/cape-dress-1.jpg" alt="3/4 Sleeve Kimono Dress" title="" />
+                                            </a>
+                                            <div class="product-details">
+                                                <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
+                                                <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
+                                                <a class="pName" href="cart.html">Sleeve Kimono Dress</a>
+                                                <div class="variant-cart">Black / XL</div>
+                                                <div class="wrapQtyBtn">
+                                                    <div class="qtyField">
+                                                        <span class="label">Qty:</span>
+                                                        <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                        <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                        <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="priceRow">
+                                                    <div class="product-price">
+                                                        <span class="money">$59.00</span>
+                                                    </div>
+                                                 </div>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <a class="product-image" href="#">
+                                                <img src="assets/images/product-images/cape-dress-2.jpg" alt="Elastic Waist Dress - Black / Small" title="" />
+                                            </a>
+                                            <div class="product-details">
+                                                <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
+                                                <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
+                                                <a class="pName" href="cart.html">Elastic Waist Dress</a>
+                                                <div class="variant-cart">Gray / XXL</div>
+                                                <div class="wrapQtyBtn">
+                                                    <div class="qtyField">
+                                                        <span class="label">Qty:</span>
+                                                        <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                        <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                        <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="priceRow">
+                                                    <div class="product-price">
+                                                        <span class="money">$99.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="total">
+                                        <div class="total-in">
+                                            <span class="label">Cart Subtotal:</span><span class="product-price"><span class="money">$748.00</span></span>
+                                        </div>
+                                         <div class="buttonSet text-center">
+                                            <a href="cart.html" class="btn btn-secondary btn--small">View Cart</a>
+                                            <a href="checkout.html" class="btn btn-secondary btn--small">Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--EndMinicart Popup-->
+                            </div>
+                        </li>
+                      </ul>
+                    </nav>
+                    <!--End Desktop Menu-->
+                </div>
+                <!--Mobile Logo-->
+                <div class="col-8 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/images/logo.png" alt=""  />
+                        </a>
+                    </div>
+                </div>
+                <!--Mobile Logo-->
+                <div class="col-2 col-sm-3 col-md-3 col-lg-2">
+                    <div class="site-cart mobile">
+                        <a href="#;" class="site-header__cart" title="Cart">
+                            <i class="icon anm anm-bag-l"></i>
+                            <span id="CartCount" class="site-header__cart-count" data-cart-render="item_count">2</span>
+                        </a>
+                        <!--Minicart Popup-->
+                        <div id="header-cart" class="block block-cart">
+                            <ul class="mini-products-list">
+                                <li class="item">
+                                    <a class="product-image" href="#">
+                                        <img src="assets/images/product-images/cape-dress-1.jpg" alt="3/4 Sleeve Kimono Dress" title="" />
+                                    </a>
+                                    <div class="product-details">
+                                        <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
+                                        <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
+                                        <a class="pName" href="cart.html">Sleeve Kimono Dress</a>
+                                        <div class="variant-cart">Black / XL</div>
+                                        <div class="wrapQtyBtn">
+                                            <div class="qtyField">
+                                                <span class="label">Qty:</span>
+                                                <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="priceRow">
+                                            <div class="product-price">
+                                                <span class="money">$59.00</span>
+                                            </div>
+                                         </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <a class="product-image" href="#">
+                                        <img src="assets/images/product-images/cape-dress-2.jpg" alt="Elastic Waist Dress - Black / Small" title="" />
+                                    </a>
+                                    <div class="product-details">
+                                        <a href="#" class="remove"><i class="anm anm-times-l" aria-hidden="true"></i></a>
+                                        <a href="#" class="edit-i remove"><i class="anm anm-edit" aria-hidden="true"></i></a>
+                                        <a class="pName" href="cart.html">Elastic Waist Dress</a>
+                                        <div class="variant-cart">Gray / XXL</div>
+                                        <div class="wrapQtyBtn">
+                                            <div class="qtyField">
+                                                <span class="label">Qty:</span>
+                                                <a class="qtyBtn minus" href="javascript:void(0);"><i class="fa anm anm-minus-r" aria-hidden="true"></i></a>
+                                                <input type="text" id="Quantity" name="quantity" value="1" class="product-form__input qty">
+                                                <a class="qtyBtn plus" href="javascript:void(0);"><i class="fa anm anm-plus-r" aria-hidden="true"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="priceRow">
+                                            <div class="product-price">
+                                                <span class="money">$99.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="total">
+                                <div class="total-in">
+                                    <span class="label">Cart Subtotal:</span><span class="product-price"><span class="money">$748.00</span></span>
+                                </div>
+                                 <div class="buttonSet text-center">
+                                    <a href="cart.html" class="btn btn-secondary btn--small">View Cart</a>
+                                    <a href="checkout.html" class="btn btn-secondary btn--small">Checkout</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--EndMinicart Popup-->
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Header-->
+    <!--Mobile Menu-->
+    <div class="mobile-nav-wrapper" role="navigation">
+        <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
+        <ul id="MobileNav" class="mobile-nav">
+            <li class="lvl1 parent megamenu"><a href="#">How it works</a></li>
+            <li class="lvl1 parent megamenu"><a href="blog-left-sidebar.html">Courses <i class="anm anm-plus-l"></i></a>
+              <ul>
+                <li><a href="#" class="site-nav"><i class="fa fa-graduation-cap"></i> online Course</a></li>
+                <li><a href="#" class="site-nav"><i class="fa fa-users"></i> Onsight Classroom </a></li>
+                <li><a href="#" class="site-nav"><i class="fa fa-eercast"></i> Your Pace</a></li>
+                <li><a href="#" class="site-nav"><i class="fa fa-credit-card"></i> Payment Plan</a></li>
+              </ul>
+            </li>
+            <li class="lvl1 parent megamenu"><a href="#">Get More</a></li>
+            <li class="lvl1 parent megamenu"><a href="#">I'm In!</a></li>
+        </ul>
+    </div>
+    <!--End Mobile Menu-->
+
+
+    <section class="breadcrums">
+        <div class="container" style="max-width: 1223px;">
+            <h2 >Checkout</h2>    
+        </div>
+    </section>
+    <section class="cart-page">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cart-section">
+                    <div class="col-md-9">
+                        <div class="shopping-cart">
+                            <div class="shopping-head">
+                                <h4>Continue Shopping</h4>
+                                <p>You have 3 courses in your cart</p>
+                                <div class="cart-icon">
+                                    <i class="fa fa-shopping-cart">Empty Cart</i>
+                                </div>
+                            </div>
+                            <div class="fliter">
+                                <div class="filter-section">
+                                    <div class="filter-cart">
+                                        <input type="checkbox" name="">
+                                        <i class="fa fa-minus" aria-hidden="true"></i>
+                                        <h2>ALL</h2>
+                                    </div>
+                                    <div class="filter-cart">
+                                        <h2>Add Checked Items to Favorites</h2>
+                                    </div>
+                                    <div class="filter-cart">
+                                        <h2>Remove Checked Items</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vertical-text" >
+                                <div class="vertical-text-icon">
+                                    <input type="checkbox" name="">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </div>
+                                <img src="assets/images/verticalbar-image.png">
+                                <div class="heading">
+                                    <h4>Introduction</h4>
+                                    <h2>Project Management</h2>
+                                    <h3>Web Training and Tutorials</h3>
+                                    <a href="">Buy Now</a>
+                                </div>
+                                <div class="verticcal-rating">
+                                    <img src="assets/images/rating-img.png">
+                                    <h2>4.6</h2>
+                                </div>
+                                <div class="class-start">
+                                    <p>Class Starts On</p>
+                                    <div class="start-class">
+                                        <p>March</p>
+                                        <h3>4</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vertical-text">
+                                <div class="vertical-text-icon">
+                                    <input type="checkbox" name="">
+                                    <i class="fa fa-minus" aria-hidden="true"></i>
+                                </div>
+                                <img src="assets/images/verticalbar-image.png">
+                                <div class="heading">
+                                    <h4>Introduction</h4>
+                                    <h2>Project Management</h2>
+                                    <h3>Web Training and Tutorials</h3>
+                                    <a href="">Buy Now</a>
+                                </div>
+                                <div class="verticcal-rating">
+                                    <img src="assets/images/rating-img.png">
+                                    <h2>4.6</h2>
+                                </div>
+                                <div class="class-start">
+                                    <p>Class Starts On</p>
+                                    <div class="start-class">
+                                        <p>March</p>
+                                        <h3>4</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="total-cart">
+                                <div class="sum">
+                                    <p>Total : $1250.00</p>
+                                    <div class="cart-btn">
+                                        <div class="shop">
+                                            <a href="">Continue Shopping</a>    
+                                        </div>
+                                        <div class="checkout-total">
+                                            <a href="">Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cart-summary">
+                            <div class="live-chat-icon">
+                                <img src="assets/images/live-chat.png">
+                                <h2>Live Chat</h2>
+                            </div>
+                            <div class="cart-summary-text">
+                                <div class="cart-head">
+                                    <h3>Order Details</h3>
+                                </div>
+                                <div class="cart-body">
+                                    <div class="cart-subtotal">
+                                        <h4>Subtotal</h4>
+                                        <p>$2,375.50</p>
+                                    </div>
+                                    <div class="cart-subtotal">
+                                        <h4>Shipping</h4>
+                                        <p>$19.93</p>
+                                    </div>
+                                    <div class="cart-subtotal">
+                                        <h4>Promo Code</h4>
+                                        <input type="text" name="" placeholder="Promo Code">
+                                    </div>
+                                    <div class="cart-subtotal">
+                                        <h4>Tax</h4>
+                                        <p>-----</p>
+                                    </div>
+                                    <div class="cart-dis">
+                                        <h4>Discount</h4>
+                                        <p>$10.00</p>
+                                    </div>
+                                </div>
+                                <div class="cart-total">
+                                    <h4>Total</h4>
+                                    <p>$2,755.43</p>
+                                </div>
+                            </div>
+                            <div class="checkout-btn">
+                                <a href="">Checkout</a>
+                            </div>
+                            <p class="bottom-cart"><< Continue Shopping</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="cart-page">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cart-section">
+                    <div class="col-md-9">
+                        <div class="manage">
+                            <h2>Manage My Account Info</h2>
+                            <div class="manage-text">
+                                <span>Name</span>
+                                <p>Nima Sweet</p>
+                            </div>
+                            <div class="manage-text">
+                                <span>Email</span>
+                                <p>Nimasweet@gmail.com</p>
+                            </div>
+                            <div class="manage-text">
+                                <span>Passwrord</span>
+                                <p>***************</p>
+                            </div>
+                             <div class="manage-btn">
+                               <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Update</button>
+                               <!-- Modal -->
+                                  <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+                                    
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          <h4 class="modal-title">Manage My Account Info</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="manage-text">
+                                                <span>Name</span>
+                                                <p>Nima Sweet</p>
+                                            </div>
+                                            <div class="manage-text">
+                                                <span>Email</span>
+                                                <p>Nimasweet@gmail.com</p>
+                                            </div>
+                                            <div class="manage-text">
+                                                <span>Passwrord</span>
+                                                <p>***************</p>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
+                                        </div>
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="biling-details">
+                            <div class="billing-head">
+                                <h2>Billing Details</h2>
+                                <p>Your detail information are secure.<span> Privacy Policy </span></p>
+                            </div>
+                            <div class="billing-text">
+                                 <div class="billing-info">
+                                    <div class="fnames">
+                                        <label>First Name</label>
+                                        <input type="text" name="">
+                                    </div>
+                                    <div class="lnames">
+                                        <label>Last Name</label>
+                                        <input type="text" name="">
+                                    </div>
+                                    <div class="address-1">
+                                        <label>Address line 1</label>
+                                        <input type="text" name="">
+                                    </div>
+                                    <div class="address-1">
+                                        <label>Address line 2</label>
+                                        <input type="text" name="">
+                                    </div>
+                                    <div class="state-info">
+                                        <div class="city">
+                                            <label>City</label>
+                                            <input type="text" name="">
+                                        </div>
+                                        <div class="state">
+                                            <label>State</label>
+                                            <input type="text" name="">
+                                        </div>
+                                        <div class="zip">
+                                            <label>Zip / Postal Code</label>
+                                            <input type="text" name="">
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+                            <div class="billing-btn">
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal1">Save and Continue</button>
+                               <!-- Modal -->
+                                  <div class="modal fade" id="myModal1" role="dialog">
+                                    <div class="modal-dialog">
+                                    
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          <h4 class="modal-title">Billing Details</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="billing-info">
+                                                <div class="fnames">
+                                                    <label>First Name</label>
+                                                    <input type="text" name="">
+                                                </div>
+                                                <div class="lnames">
+                                                    <label>Last Name</label>
+                                                    <input type="text" name="">
+                                                </div>
+                                                <div class="address-1">
+                                                    <label>Address line 1</label>
+                                                    <input type="text" name="">
+                                                </div>
+                                                <div class="address-1">
+                                                    <label>Address line 2</label>
+                                                    <input type="text" name="">
+                                                </div>
+                                                <div class="state-info">
+                                                    <div class="city">
+                                                        <label>City</label>
+                                                        <input type="text" name="">
+                                                    </div>
+                                                    <div class="state">
+                                                        <label>State</label>
+                                                        <input type="text" name="">
+                                                    </div>
+                                                    <div class="zip">
+                                                        <label>Zip / Postal Code</label>
+                                                        <input type="text" name="">
+                                                    </div>
+                                                </div>
+                                             </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Edit</button>
+                                        </div>
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>            
+                    </div>
+                    <div class="col-md-3">
+                        <div class="cart-summary">
+                            <div class="live-chat-icon">
+                                <img src="assets/images/live-chat.png">
+                                <h2>Live Chat</h2>
+                            </div>
+                            <div class="cart-summary-text">
+                                <div class="cart-head">
+                                    <h3>Order Details</h3>
+                                </div>
+                                <div class="cart-body">
+                                    <div class="cart-subtotal">
+                                        <h4>Subtotal</h4>
+                                        <p>$2,375.50</p>
+                                    </div>
+                                    <div class="cart-subtotal">
+                                        <h4>Shipping</h4>
+                                        <p>$19.93</p>
+                                    </div>
+                                    <div class="cart-subtotal">
+                                        <h4>Promo Code</h4>
+                                        <input type="text" name="" placeholder="Promo Code">
+                                    </div>
+                                    <div class="cart-subtotal">
+                                        <h4>Tax</h4>
+                                        <p>-----</p>
+                                    </div>
+                                    <div class="cart-dis">
+                                        <h4>Discount</h4>
+                                        <p>$10.00</p>
+                                    </div>
+                                </div>
+                                <div class="cart-total">
+                                    <h4>Total</h4>
+                                    <p>$2,755.43</p>
+                                </div>
+                            </div>
+                            <div class="checkout-btn">
+                                <a href="">Checkout</a>
+                            </div>
+                            <p class="bottom-cart"><< Continue Shopping</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cart-page">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="cart-section">
+                    <div class="col-md-12">
+                        <div class="biling-details">
+                            <div class="billing-head">
+                                <h2>Credit Card Details</h2>
+                                <p>We have put in place secure measures for protecting your Details - <span> Privacy Policy </span></p>
+                            </div>
+                            <div class="credit-card">
+                                <div class="card-number">
+                                    <label>Credit Card Number</label>
+                                    <input type="text" name="">
+                                </div>
+                                <div class="card-number">
+                                    <label>Expiration (MM / YY)</label>
+                                    <input type="text" name="">
+                                    <input type="text" name="">
+                                </div>
+                                <div class="card-number">
+                                    <label>Card Validation Code</label>
+                                    <input type="text" name="">
+                                </div>
+                            </div>
+                            <div class="save-card">
+                                <div class="checkbox">
+                                    <input type="checkbox" name="">
+                                    <p>Save Credit Card Details</p>
+                                </div>
+                            </div>
+                            <div class="save-card">
+                                <a href="">View Order Summary <i class="fa fa-arrow-circle-right"></i></a>                                   
+                            </div>
+                        </div>
+                                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+
+
+
+        <div class="footer-accordion">
+            <footer class="footer">
+                <div class="footer-top">
+                    <div class="footer-container">
+                        <div class="left">
+                            <ul>
+                                <li>
+                                    <a href="#">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#">About us</a>
+                                </li>
+                                <li>
+                                    <a href="#">Service</a>
+                                </li>
+                                <li class="has-sub">
+                                    <a href="#">Protfolio</a>
+                                    <ul class="footer-sub">
+                                        <li>
+                                            <a href="#">Testimonials</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Forum</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Advertise with Us</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Partnerships</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Affiliates Program</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Press</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Copyrights</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub">
+                                    <a href="#">More</a>
+                                    <ul class="footer-sub">
+                                        <li>
+                                            <a href="#">Privacy Policy</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Terms &amp; Condition</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Trust &amp; Safety</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Security</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Legal</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Fees and Charges</a>
+                                        </li>
+                                    </ul>
+                                    
+                                </li>
+                                <li>
+                                    <a href="#">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right"><a href="#">Business with Connect <span class="orange">With</span> <span class="green">Training</span></a></div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                <div class="footer-container">
+                <div class="footer-social-link-outer" >
+                    <div class="facebook">
+                        <p class="title">FACEBOOK</p>
+                        <div class="face-con">
+                            <div class="face-img"><img src="assets/images/face-book-img.png" alt=""></div>
+                            <div class="face-pro">
+                                <span class="pro-img"><img src="assets/images/pro-img.png" alt=""></span>
+                                <div class="face-pro-con">
+                                    <p class="mail">Connectwithtraining.com</p>
+                                    <p class="time">3 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="face-des">
+                                <p>XXXXX XXXXXx XXXXXXX XXXXXXX X XXXXX XXXXXXXXXX XXX X...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tweets">
+                        <p class="title">TWEETS</p>
+                        <div class="tweets-con">
+                            <ul>
+                                <li>
+                                    <div class="tweet-con">RT <a href="#">@drinksfeed:</a> 5 Drinks that should be on your south african summer Holiday checklist <a href="#">https://t.co/U1UiXFJVrH</a></div>
+                                    <p class="mail">@winelands_co_za - 2 hours ago</p>
+                                </li>
+                                <li>
+                                    <div class="tweet-con">RT <a href="#">@drinksfeed:</a> 5 Drinks that should be on your south african summer Holiday checklist <a href="#">https://t.co/U1UiXFJVrH</a></div>
+                                    <p class="mail">@winelands_co_za - 2 hours ago</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tweet-btn">
+                            <button>
+                                <span>
+                                    <i class="fa fa-twitter"></i>
+                                    Follow                              </span>                         </button>
+                        </div>
+                    </div>
+                    <div class="from-blog">
+                        <p class="title">FROM OUR BLOG</p>
+                        <div class="frm-blg-outer">
+                            <div class="cont">
+                                <span class="img"><img src="assets/images/blog-img.png" alt=""></span>
+                                <h2 class="title">whales in the winela...</h2>
+                                <p class="con">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                <a href="#">Read full article</a>
+                            </div>
+                            <div class="cont">
+                                <span class="img"><img src="assets/images/blog-img-1.png" alt=""></span>
+                                <h2 class="title">whales in the winela...</h2>
+                                <p class="con">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                <a href="#">Read full article</a>
+                            </div>
+                            <div class="cont">
+                                <span class="img"><img src="assets/images/blog-img-2.png" alt=""></span>
+                                <h2 class="title">whales in the winela...</h2>
+                                <p class="con">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                <a href="#">Read full article</a>
+                            </div>
+                            <div class="cont">
+                                <span class="img"><img src="assets/images/blog-img-3.png" alt=""></span>
+                                <h2 class="title">whales in the winela...</h2>
+                                <p class="con">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                                <a href="#">Read full article</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cont-info">
+                        <p class="title">CONTACT INFO</p>
+                        <div class="cont-info-outer">
+                            <p class="cnt-img"><img src="assets/images/connect-img.png" alt=""></p>
+                            <ul>
+                                <li class="home"> <i class="fa fa-home"></i>Maryland, USA </li>
+                                <li class="mail"><i class="fa fa-envelope-o"></i>info.connect@connectwithtraining.com</li>
+                                <li class="number-1"><i class="fa fa-clock-o"></i> 1+202-683-8583 </li>
+                                <li class="number-2"><i class="fa fa-plus-square"></i>1+301-780-6145 </li>
+                            </ul>
+                        </div>
+                        <div class="live-chat">
+                            <a href="#">Live Chat</a>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="footer-floow-us-outer">
+                    <div class="floow-us">
+                        <h2 class="title">Follow Us</h2>
+                        <ul>
+                            <li class="twiter">
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li class="face-book">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li class="ins">
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                            </li>
+                            <li class="twiter">
+                                <a href="#"><i class="fa fa-youtube"></i></a>
+                            </li>
+                            <li class="face-book">
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                            <li class="ins">
+                                <a href="#"><i class="fa fa-vimeo"></i></a>
+                            </li>
+                        </ul>
+                        <div class="newsletter">
+                            <input type="text" placeholder="Email Address..">
+                            <button>
+                                <span>Sign up</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="useful-res">
+                        <h2 class="title">Useful Resources</h2>
+                        <div class="subcribe-sec">
+                            <ul class="left">
+                                <li><a href="#">xxxxxx xxxxxx</a></li>
+                                <li><a href="#">xxxxxx xxxxxx</a></li>
+                                <li><a href="#">xxxxxx xxxxxx</a></li>
+                                <li><a href="#">xxxxxx xxxxxx</a></li>
+                            </ul>
+                            <div class="subcribe-button">
+                                <button>
+                                    <span>Subscribe</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <div class="copyright">
+                    <a href="#" class="logo"><img src="assets/images/footer-logo.png"></a>
+                    <p class="copyright-con">© 2020 All Rights Reserved.</p>
+                    <a href="#" class="sitemap">SITEMAP</a>
+                </div>
+                <div class="top-arrow">arrow</div>
+            </footer>
+        </div>
+    
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="">
+        $ = function(id) {
+          return document.getElementById(id);
+        }
+
+        var show = function(id) {
+            $(id).style.display ='block';
+        }
+        var hide = function(id) {
+            $(id).style.display ='none';
+        }
+        
+    </script>
+     <!-- Including Jquery -->
+    <!--  <script src="assets/js/vendor/jquery-3.3.1.min.js"></script> -->
+     <script src="assets/js/vendor/modernizr-3.6.0.min.js"></script>
+     <script src="assets/js/vendor/jquery.cookie.js"></script>
+     <script src="assets/js/vendor/wow.min.js"></script>
+     <!-- Including Javascript -->
+     <script src="assets/js/bootstrap.min.js"></script>
+     <script src="assets/js/plugins.js"></script>
+     <script src="assets/js/popper.min.js"></script>
+     <script src="assets/js/lazysizes.js"></script>
+     <script src="assets/js/main.js"></script>
+     
+     
+    
+</div>
+</body>
+
+</html>

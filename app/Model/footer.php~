@@ -1,0 +1,197 @@
+<div class="events" style="padding-top:30px;background:#f5f5f5">
+    <div class="container">
+        <div class="row">
+            
+             <?php
+                 	$stmt = $pdo->prepare("SELECT name,value FROM settings"); $stmt->execute();
+						$data = $stmt->fetchAll(PDO::FETCH_COLUMN|PDO::FETCH_GROUP);
+				?>
+            <div class="col-lg-3 text-center">
+                <h4 class="footermenuheader"><?=$LANG['Study_In_Canada'];?></h4>
+                <hr  style="background:#b1040e">
+                <p>
+                    <b><a class="footerlinks" href="aboutUs"><?=$LANG['About_Us'];?></a></b><br>
+                    <b><a class="footerlinks" href="contact-us"><?=$LANG['Contact_Us'];?></a></b><br>
+                    <b><a class="footerlinks" href="faq"><?=$LANG['FAQ'];?></a></b><br>
+                    <b><a class="footerlinks" href="MeetOurTeam"><?=$LANG['Meet_Our_Team'];?></a></b><br>
+                    <b><a class="footerlinks" href="OurSponsors"><?=$LANG['Our_Sponsors'];?></a></b><br>
+                    <b><a class="footerlinks" href="privacy"><?=$LANG['Privacy_Policy'];?></a></b><br>
+                    <b><a class="footerlinks" href="disclaimer"><?=$LANG['Disclaimer'];?></a></b>
+                </p>
+            </div>
+            <div class="col-lg-3 text-center">
+                <h4 class="footermenuheader"><?=$LANG['Resources'];?></h4>
+                <hr style="background:#b1040e">
+                <p>
+                    <b><a class="footerlinks" href="articles"><?=$LANG['Articles'];?></a></b><br>
+                    <b><a class="footerlinks" href="events"><?=$LANG['Events'];?></a></b><br>
+                    <b><a class="footerlinks" href="OnlineBusinessDiscovery"><?=$LANG['Online_Business_Discovery'];?></a></b><br>
+                </p>
+            </div>
+            <div class="col-lg-3 mb-4 text-center">
+                <?php echo html_entity_decode($data['footertext_menu3'][0]); ?>
+            </div>
+				<div class="col-xs-6 col-md-3 mb-4 text-center">
+                <h4 class="footermenuheader"><?=$LANG['Subscribe_our_Newsletter'];?></h4>
+                <hr style="background:#b1040e">
+					<form method="post" name="subscribeform" id="subscribeform" enctype="multipart/form-data"> 
+					<div class="form-group input-group has-search">
+						<input type="email" name="email" id="email" class="form-control" placeholder="Your Email" style="background:white;color:black;z-index:0;"  required="required">
+<!-- 						<button  class="btn btn-primary" onclick="if (checkform()) {submitForm();} return false;" >Subscribe</button> -->
+						<div class="input-group-append">
+																      <button class="btn btn-warning btn-xs bg-danger text-white" onclick="if (checkform()) {submitForm();} return false;" style="">
+																        <?=$LANG['Subscribe'];?>
+																      </button>
+																    </div>
+					</div>						
+					<input type="hidden" name="htmlemail" value="1">
+					<input type="hidden" name="list[2]" value="signup" />
+					<input type="hidden" name="listname[2]" value="newsletter"/>
+					<input type="hidden" name="subscribe" value="subscribe"/>
+					<div id="result" style="color: red;"></div> 
+					</form> 
+					<script type="text/javascript"> function checkform() { re = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/; if (!(re.test($("#email").val()))) { $("#result").empty().append("Please enter a valid email address"); $("#email").focus(); return false; } return true; } function submitForm() { successMessage = 'Thank you for your registration. Please check your email to confirm.'; data = $('#subscribeform').serialize(); $.ajax( { type: 'POST', data: data, url: 'https://<?php echo $website; ?>/newsletter/?p=subscribe&id=1', dataType: 'html', success: function (data, status, request) { $("#result").empty().append(successMessage); $('#email').val(''); }, error: function (request, status, error) { alert('Sorry, we were unable to process your subscription.'); } }); } </script>
+					<br>
+					<p><?=$LANG['Select_Language'];?></p>
+					<hr>
+					<div id="google_translate_element" style="display:none;"></div>
+					<div style="background-color:#F5F5F5;height:25px;margin-top:14px;"></div>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer_background" style="background: #b1040e;color: white;"></div>
+    <div class="container">
+        <div class="row footer_row">
+            <div class="col">
+                <div class="footer_content">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <a href="index" style="color:white;margin-right:10px;margin-left:10px"><?=$LANG['Home'];?></a> |
+                            <a href="disclaimer" style="color:white;margin-right:10px;margin-left:10px"><?=$LANG['Disclaimer'];?></a> |
+                            <a href="OnlineBusinessDiscovery" style="color:white;margin-right:10px;margin-left:10px"><?=$LANG['Online_Business_Discovery'];?></a> |
+                            <a href="privacy" style="color:white;margin-right:10px;margin-left:10px"><?=$LANG['Privacy_Policy'];?></a> |
+                            <a href="contact-us?comments" style="color:white;margin-right:10px;margin-left:10px"><?=$LANG['Comments_Suggestion'];?></a> | 
+                            <a href="sitemap" style="color:white;margin-right:10px;margin-left:10px"><?=$LANG['Sitemap'];?></a> |
+                            <a href="contact-us" style="color:white;margin-right:10px;margin-left:10px"><?=$LANG['Contact_Us'];?></a>
+                        </div>
+                        <div class="col-lg-12 footer_col text-center">
+
+                            <!-- Footer About -->
+                            <div class="footer_section footer_about">
+
+
+                                <div class="footer_social">
+                                    <ul>
+                                        <li class='fb'><a href="<?php echo $data['facebook'][0]; ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li class='gp'><a href="<?php echo $data['googleplus'][0]; ?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+													 <li class='yt'><a href="<?php echo $data['youtube'][0]; ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                                        <li class='ig'><a href="<?php echo $data['instagram'][0]; ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li class='tw'><a href="<?php echo $data['twitter'][0]; ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row copyright_row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <div class="cr_text text-center" style="color:white">
+                        <center>Copyright &copy; 2006 - <script>
+                                document.write(new Date().getFullYear());
+
+                            </script>, 4R Business Services Inc. </center>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    	
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery.cookieMessage.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8B8G28J36L"></script>
+<script>
+
+  $('.first-button').on('click', function () {
+    $('.animated-icon1').toggleClass('open');
+  });
+  
+  $('.second-button').on('click', function () {
+    $('.animated-icon2').toggleClass('open');
+  });
+  
+  $('.third-button').on('click', function () {
+    $('.animated-icon3').toggleClass('open');
+  });
+
+	$('.third-button').focusout(function() {
+		 if($('#navbarSupportedContent20').css("display") == "block"){
+		 	$('#hmbutton').click();
+		 };
+	});
+
+	
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8B8G28J36L');
+  
+  function changegoogletr(){
+  		$(".goog-logo-link").empty();
+  		$(".goog-te-combo").css("background-color","#CCC");
+  		$(".goog-te-combo").css("color","#000");
+  		$(".goog-te-combo").css("font-size","14px");
+  		$(".goog-te-combo").css("border","1px solid #AAA");
+  		$(".goog-te-combo").find('option[value=""]').text("English");
+  			
+  	  	
+  	  	$(".skiptranslate").css("height","10px");
+  	  	$("#google_translate_element").css("display","block"); 	
+  	  	  	
+  	  	$("#cookie-msg").css("opacity","0.98");
+  	  	$("#cookie-msg").css("border-top","1px solid #ccc");
+  	}
+  
+  setTimeout(changegoogletr, 1200);
+  
+
+  	$.cookieMessage({
+	  'mainMessage': '<?=$LANG["We_use_cookies_to_enhance_your_experience._By_continuing_to_visit_this_site,_you_agree_to_our_use_of_cookies."];?>  <a href="privacy"><?=$LANG["Learn_more"];?></a>. &nbsp;  &nbsp;  ',
+	  'acceptButton': '<?=$LANG["Got_it!"];?>',
+	  backgroundColor: '#3e3e3e',
+	  fontSize: '17px',
+	  fontColor: 'white',
+	  btnBackgroundColor: '#B1040E',
+	  btnFontSize: '17px',
+	  btnFontColor: 'white',
+	  linkFontColor: '#fff'
+	});
+	
+	function gsearch(value) {
+		$("#gsc-i-id1").val(value);
+		$('.gsc-search-button').click();
+	}
+</script>
+<div class="gcse-search" id="searchgbox" style="display:none;"></div>
+
+</footer>

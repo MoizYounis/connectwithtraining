@@ -1,0 +1,16 @@
+[17-Oct-2022 23:11:16 Asia/Kolkata] PHP Fatal error:  Uncaught ErrorException: Method ReflectionParameter::getClass() is deprecated in /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Container/Container.php:853
+Stack trace:
+#0 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Container/Container.php(853): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8192, 'Method Reflecti...', '/home3/intelqrh...', 853)
+#1 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Container/Container.php(816): Illuminate\Container\Container->resolveDependencies(Array)
+#2 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build('App\\Exceptions\\...')
+#3 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Container/Container.php(265): Illuminate\Container\Container->resolve('App\\Exceptions\\...', Array, false)
+#4 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Container/Container.php(785): Illuminate\Container\Container->Illuminate\Container\{closure}(Object(Illuminate\Foundation\Application), Array)
+#5 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Container/Container.php(667): Illuminate\Container\Container->build(Object(Closure))
+#6 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Container/Container.php(615): Illuminate\Container\Container->resolve('Illuminate\\Cont...', Array)
+#7 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(767): Illuminate\Container\Container->make('Illuminate\\Cont...', Array)
+#8 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(170): Illuminate\Foundation\Application->make('Illuminate\\Cont...')
+#9 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(123): Illuminate\Foundation\Bootstrap\HandleExceptions->getExceptionHandler()
+#10 /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(100): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(ErrorException))
+#11 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(ErrorException))
+#12 {main}
+  thrown in /home3/intelqrh/public_html/cwt/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 853
