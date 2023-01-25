@@ -130,6 +130,7 @@ Route::group(['middleware' => ['auth','superadmin']], function(){
 
 	Route::resource('blog', 'Admin\BlogController');
 	Route::resource('blogcategory', 'Admin\BlogCatController');
+	Route::resource('pricing', 'Admin\PricingController');
 	Route::resource('author', 'Admin\AuthorController');	
 	
 	Route::resource('course', 'Admin\CourseController');

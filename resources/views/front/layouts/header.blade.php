@@ -68,7 +68,15 @@
 
 								<div class="head-top-drp country">
                                     
-                                  
+                                    <?php
+                                        $user_currency = Helper::getCurrencyWithIp();
+                                        $currency_list = Helper::getCurrencyList();
+                                    ?>
+									<select class="currencyList" onfocus='this.size=5;' onblur='this.size=0;' onchange="this.size=1; this.blur(); setCurrency(this, '{{csrf_token()}}')">
+									    @foreach($currency_list as $key => $value)
+									        <option value="{{$value}}" @if($key == $user_currency) selected @endif>{{$key}}</option>
+									    @endforeach
+									</select>
 									
 									<div class="flags_img"></div>
 
@@ -124,7 +132,7 @@
 
 						<ul class="nav navbar-nav">
 
-							<li class=""><a href="{{url('coming-soon')}}">How it works</a></li>
+							<li class=""><a href="{{url('how-it-works')}}">How it works</a></li>
 
 							<li class="ui-menu-icon">
 

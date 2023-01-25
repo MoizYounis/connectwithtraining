@@ -87,6 +87,27 @@ function addToCart(courseName, cid){
     }
 }
    
+//price add to cart
+function priceAddToCart(courseName, cid){
+    if(courseName !== '' && cid !== ''){
+        $.ajax({
+           	url: baseUrl+"/addtocart",
+           	type: "post",
+           	data: {"course_name" : courseName, 'id': cid},
+           	dataType: "json",	
+           	success:function(response) {
+           		if(response.error == 'false'){
+           		    loadCart();
+           			round_success_noti(response.msg);
+                       $(location).attr('href', baseUrl+"/cart");
+           		}
+           	},
+            error: function(response){
+                round_error_noti('Connection Error...');
+            }
+        });
+    }
+}
 //add to fav
 function addToFav(courseName='', cid=''){
     if(cid !== ''){
@@ -99,6 +120,7 @@ function addToFav(courseName='', cid=''){
            		if(response.error == 'false'){
            		    loadFav();
            			round_success_noti(response.msg);
+                       $(location).attr('href', baseUrl+"/cart");
            		}
            		else{
            		    round_error_noti(response.msg);

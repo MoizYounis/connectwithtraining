@@ -8,7 +8,7 @@
         </div>
     </section>
 
-    <section class="signin">
+    <section class="signin signin_log_pg">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -18,36 +18,100 @@
                         </div>
                        <div class="form-wrap">
                             <div class="tabs">
-                                <h3 class="signup-tab"><a href="#signup-tab-content">Sign Up</a></h3>
-                                <h3 class="login-tab"><a class="active" href="#login-tab-content">Login</a></h3>
+                                <h3 class="signup-tab"><a href="#signup-tab-content">SIGNUP</a></h3>
+                                <h3 class="login-tab"><a class="active" href="#login-tab-content">LOGIN</a></h3>
+                                <h3 class="forget-tab"><a class="active" href="#forget-tab-content">FORGET PASSWORD</a></h3>
                             </div><!--.tabs-->
 
                             <div class="tabs-content">
                                 <div id="signup-tab-content">
+
                                     <form class="signup-form" action="{{ route('register') }}" method="post">
+                                        <div class="fb_icon">
+                                            <ul>
+                                                <li><a href="#url"><img src="{{asset('public/assets/front/images/sos1.png')}}"></a></li>
+                                                <li><a href="#url"><img src="{{asset('public/assets/front/images/sos2.png')}}"></a></li>
+                                                <li><a href="#url"><img src="{{asset('public/assets/front/images/sos3.png')}}"></a></li>
+                                            </ul>
+                                        </div>
                                         @csrf
-                                        <input type="text" name="first_name" value="{{ old('first_name') }}" class="input" id="user_name" autocomplete="off" placeholder="First Name">
-                                        <input type="text" name="last_name" value="{{ old('last_name') }}" class="input" id="user_name" autocomplete="off" placeholder="Last Name">
-                                        <input type="text" name="email" value="{{ old('email') }}" class="input" id="user_email" autocomplete="off" placeholder="Email">
-                                        <input type="text" name="phone" value="{{ old('phone') }}" class="input" id="user_email" autocomplete="off" placeholder="Phone">
-                                        <input type="password" class="input" name="password" id="user_pass" autocomplete="off" placeholder="Password">
-                                        <input type="submit" class="button" value="Sign Up">
+                                        <div class="ipt_bx">
+                                            <input type="text" name="first_name" value="{{ old('first_name') }}" class="input" id="first_name" autocomplete="off" placeholder="First Name">
+                                            <span><img src="{{asset('public/assets/front/images/input-ico1.png')}}"></span>
+                                        </div>
+                                        <div class="ipt_bx">
+                                            <input type="text" name="last_name" value="{{ old('last_name') }}" class="input" id="last_name" autocomplete="off" placeholder="Last Name">
+                                            <span><img src="{{asset('public/assets/front/images/input-ico2.png')}}"></span>
+                                        </div>
+                                        <div class="ipt_bx">
+                                            <input type="text" name="email" value="{{ old('email') }}" class="input" id="user_email" autocomplete="off" placeholder="Email">
+                                            <span><img src="{{asset('public/assets/front/images/input-ico2.png')}}"></span>
+                                        </div>
+                                        <!-- <div class="ipt_bx">
+                                            <input type="text" name="phone" value="{{ old('phone') }}" class="input" id="user_email" autocomplete="off" placeholder="Phone">
+                                            <span><img src="{{asset('public/assets/front/images/input-ico4.png')}}"></span>
+                                        </div> -->
+                                       <div class="ipt_bx"> 
+                                            <input type="password" class="input" name="password" id="user_pass" autocomplete="off" placeholder="Password">
+                                            <span><img src="{{asset('public/assets/front/images/input-ico3.png')}}"></span>
+                                        </div>
+                                        <div class="ipt_bx"> 
+                                            <input type="password" class="input" name="password_confirmation" id="user_pass" autocomplete="off" placeholder="Confirm Password">
+                                            <span><img src="{{asset('public/assets/front/images/input-ico4.png')}}"></span>
+                                        </div>
+                                        <div class="help-text">
+                                        <p>By signing up, you agree to our <a href="{{url('terms-conditions')}}">Terms of service</a></p>
+                                       <!--  <p><a href="{{url('terms-conditions')}}">Terms of service</a></p> -->
+                                    </div>
+                                    <div class="iput_sub_btn iput_sub_btn1">
+                                         <input type="submit" class="button" value="">
+                                    </div>
+                                       
                                     </form><!--.login-form-->
-                                    <div class="help-text">
-                                        <p>By signing up, you agree to our</p>
-                                        <p><a href="{{url('terms-conditions')}}">Terms of service</a></p>
-                                    </div><!--.help-text-->
+                                    <!--.help-text-->
                                 </div><!--.signup-tab-content-->
 
                                 <div id="login-tab-content" class="active">
                                     <form class="login-form" action="{{ route('login') }}" method="post">
                                         @csrf
-                                        <input type="text" name="email" value="{{ old('email') }}" class="input" id="user_login" autocomplete="off" placeholder="Email">
-                                        <input type="password" class="input" id="user_pass" name="password" autocomplete="off" placeholder="Password">
-                                        <input type="checkbox" class="checkbox" id="remember_me" name="remember" checked>
-                                        <label for="remember_me">Remember me</label><br>
-                                        <div style="margin-top: 10px; margin-bottom: 10px;"><a href="#ForgetPassword">Forgot Password</a></div>
-                                        <input type="submit" class="button" value="Login">
+                                        <div class="ipt_bx">
+                                            <input type="text" name="email" value="{{ old('email') }}" class="input" id="user_login" autocomplete="off" placeholder="Username">
+                                            <span><img src="{{asset('public/assets/front/images/input-ico1.png')}}"></span>
+                                        </div>
+                                        <div class="ipt_bx">
+                                            <input type="password" class="input" id="user_pass" name="password" autocomplete="off" placeholder="Password">
+                                             <span><img src="{{asset('public/assets/front/images/input-ico4.png')}}"></span>
+                                        </div>
+                                        <div class="log_rem">
+                                            <div><input type="checkbox" class="checkbox" id="remember_me" name="remember" checked>
+                                        <label for="remember_me">Remember me</label></div>
+                                            
+                                        <div><a href="#ForgetPassword">Forgot Password</a></div>
+                                        </div>
+                                        <div class="iput_sub_btn iput_sub_btn2">
+                                             <input type="submit" class="button" value="">
+                                        </div>
+                                       <!--  <input type="submit" class="button" value="Login"> -->
+                                    </form>
+                                </div>
+                                <div id="forget-tab-content">
+                                    <form class="login-form" action="{{ route('login') }}" method="post">
+                                        @csrf
+                                       <div class="ipt_bx">
+                                            <input type="password" class="input" id="user_pass" name="password" autocomplete="off" placeholder="Old Password">
+                                             <span><img src="{{asset('public/assets/front/images/input-ico4.png')}}"></span>
+                                        </div>
+                                        <div class="ipt_bx">
+                                            <input type="password" class="input" id="user_pass" name="password" autocomplete="off" placeholder="New Password">
+                                             <span><img src="{{asset('public/assets/front/images/input-ico4.png')}}"></span>
+                                        </div>
+                                        <div class="ipt_bx">
+                                            <input type="password" class="input" id="user_pass" name="password" autocomplete="off" placeholder="Confirm New Password">
+                                             <span><img src="{{asset('public/assets/front/images/input-ico4.png')}}"></span>
+                                        </div>
+                                        <div class="iput_sub_btn iput_sub_btn3">
+                                             <input type="submit" class="button" value="">
+                                        </div>                                       
                                     </form>
                                 </div>
                             </div><!--.tabs-content-->
@@ -56,7 +120,7 @@
                 </div>
             </div>
         </div>
-        <div class="cwt-image">
+        <!-- <div class="cwt-image">
             <h4>We make it easy <br>When you forget your password</h4>
             <img src="{{asset('public/assets/front/images/signup-image.png')}}">
         </div>
@@ -76,7 +140,7 @@
                 <input type="text" name="email" value="{{ old('email') }}" class="input" id="user_login" autocomplete="off" placeholder="Enter Your Email">
                 <input type="submit" class="button" value="Submit">
             </form>
-        </div>
+        </div> -->
         
         <div class="verify-account" style="display:none;">
             <div class="sign-popup">

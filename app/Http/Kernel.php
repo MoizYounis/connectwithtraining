@@ -80,6 +80,11 @@ class Kernel extends HttpKernel
         'update_blog_category' => \App\Http\Middleware\blogCategory\update_blog_category::class,
         'delete_blog_category' => \App\Http\Middleware\blogCategory\delete_blog_category::class,
 
+        'create_pricing' => \App\Http\Middleware\pricing\create_pricing::class,
+        'view_pricing' => \App\Http\Middleware\pricing\view_pricing::class,
+        'update_pricing' => \App\Http\Middleware\pricing\update_pricing::class,
+        'delete_pricing' => \App\Http\Middleware\pricing\delete_pricing::class,
+
         'create_author' => \App\Http\Middleware\authors\create_author::class,
         'view_author' => \App\Http\Middleware\authors\view_author::class,
         'update_author' => \App\Http\Middleware\authors\update_author::class,

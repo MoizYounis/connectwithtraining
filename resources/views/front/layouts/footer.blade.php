@@ -63,7 +63,7 @@ $blogs = App\Model\Blog::Join('blog_categories as bc', 'bc.id', '=' ,'blogs.blog
 								<a href="{{url('about')}}">About us</a>
 							</li>
 							<li>
-								<a href="{{url('coming-soon')}}">Service</a>
+								<a href="{{url('get-more')}}">Services</a>
 							</li>
 							<li class="has-sub">
 								<a href="#">Protfolio</a>
@@ -188,7 +188,7 @@ $blogs = App\Model\Blog::Join('blog_categories as bc', 'bc.id', '=' ,'blogs.blog
 									    <?php
 									    if(strlen($blog->blog_content)>20){
 											$blogContent = substr($blog->blog_content, 0, 260);
-											$blogContent = $blogContent."<a href='#'>... Read full article</a>";
+											// $blogContent = $blogContent."<a href='#'>... Read full article</a>";
 									     }
 										else{
 										    $blogContent = $blog->blog_content;
@@ -207,12 +207,18 @@ $blogs = App\Model\Blog::Join('blog_categories as bc', 'bc.id', '=' ,'blogs.blog
 				<div class="cont-info">
 					<p class="title">CONTACT INFO</p>
 					<div class="cont-info-outer">
-						<p class="cnt-img"><img src="{{asset('public/assets/front/images/connect-img.png')}}" alt=""></p>
+						<p class="cnt-img">
+							<a href="{{route('home')}}"><img src="{{asset('public/assets/front/images/connect-img.png')}}" alt=""></a>
+						</p>
 						<ul>
 							<li class="home"> <i class="fa fa-home"></i>{{$gs->contact_address}} </li>
-							<li class="mail"><i class="fa fa-envelope-o"></i>{{$gs->contact_email}}</li>
+							<li class="mail"><i class="fa fa-envelope-o"></i>
+								<a href="mailto:{{$gs->contact_email}}">{{$gs->contact_email}}</a>
+							</li>
 							<!-- <li class="number-1"><i class="fa fa-clock-o"></i> 1+202-683-8583 </li> -->
-							<li class="number-2"><i class="fa fa-plus-square"></i>{{$gs->customer_no}} </li>
+							<li class="number-2"><i class="fa fa-plus-square"></i> 
+								<a href="tel:{{$gs->customer_no}}">{{$gs->customer_no}}</a>
+							</li>
 						</ul>
 					</div>
 					<!--<div class="live-chat">-->

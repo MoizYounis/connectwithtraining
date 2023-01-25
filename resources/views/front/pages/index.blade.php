@@ -43,10 +43,15 @@
     <div id="myModal2" class="modal" style="z-index: 10243;">
         <!-- Modal content -->
         <div class="modal-content modal-home-popup2 referel-modal">
-            <a href="http://intelligentkoncept.com/cwt/refer-a-friend"><img class="home-popup-img2" src="{{asset('public/assets/front/images/home-popup1.png')}}"></a>
+         <div class="ref_mod">
+            <a href="https://www.connectwithtraining.com/refer-a-friend"><img class="home-popup-img2" src="{{asset('public/assets/front/images/home-popup1.png')}}">
+            </a>
             <div class="myModalClosehome-resize-ref1">
-                  <span class="myModalClosehome-refer">&times;</span>
-               </div>
+               <span class="myModalClosehome-refer">&times;</span>
+            </div>
+         </div>
+           
+            
          </div>
     </div>
     <!--End The Modal -->
@@ -61,7 +66,7 @@
             </ul>
          </div>
          <div class="fiexd-an-ins">
-            <a href="{{url('coming-soon')}}">Become An Instructor</a>
+            <a href="{{url('become-an-instructor')}}">Become An Instructor</a>
          </div>
          @if($data->banner_img != '')
          <div class="banner-outer">

@@ -91,6 +91,7 @@ Route::get('gift-card', function () { return view('front.gift.gift-card'); });
 
 
 Route::get('get-more', 'Front\GetMoreController@getmore');
+Route::get('how-it-works', 'Front\GetMoreController@howItWorks');
 Route::get('interview-questions', 'Front\GetMoreController@interview_question');
 Route::get('extensive-interview-plans', 'Front\GetMoreController@extensive_interview_plans');
 Route::get('resume-building', 'Front\GetMoreController@resume_building');

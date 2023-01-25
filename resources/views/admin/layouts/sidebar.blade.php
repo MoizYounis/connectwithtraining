@@ -277,6 +277,12 @@
         </a>
       </li>
 
+      <li id="pricing">
+        <a href="{{url('admin/pricing')}}" class="waves-effect">
+          <i class="zmdi zmdi-comment"></i> <span>Pricing</span>
+        </a>
+      </li>
+
       <br><br><br><br>      
     </ul>
    

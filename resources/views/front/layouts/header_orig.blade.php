@@ -21,6 +21,7 @@
   		    
 
   		<link rel="stylesheet" href="{{asset('public/assets/front/css/custom.css')}}">
+  		<link rel="stylesheet" href="{{asset('public/assets/front/css/responsive.css')}}">
 
   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
@@ -68,15 +69,7 @@
 
 								<div class="head-top-drp country">
                                     
-                                    <?php
-                                        $user_currency = Helper::getCurrencyWithIp();
-                                        $currency_list = Helper::getCurrencyList();
-                                    ?>
-									<select class="currencyList" onfocus='this.size=5;' onblur='this.size=0;' onchange="this.size=1; this.blur(); setCurrency(this, '{{csrf_token()}}')">
-									    @foreach($currency_list as $key => $value)
-									        <option value="{{$value}}" @if($key == $user_currency) selected @endif>{{$key}}</option>
-									    @endforeach
-									</select>
+                                  
 									
 									<div class="flags_img"></div>
 

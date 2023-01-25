@@ -29,306 +29,90 @@
                                 </div>
                             </div>
                             <div class="pricing-plans">
-                                <?php
-                                        $user_currency = Helper::getCurrencyWithIp();
-                                        $currency_list = Helper::getCurrencyList();
-                                    ?>
-                                <div class="plans-section-price pricing_sec_2">
+                                <div class="plans-section-price">
                                     <div class="single-border">
-                                        <p><b>{{ $single_1 ? $single_1->pricing_name : 'SINGLE' }}</b></p>
+                                        <p><b>SINGLE</b></p>
                                         <div class="free-circle">
                                             <h2>FREE</h2>
                                         </div>
-                                        <p><b>Membership Expires after {{ $single_1 ? $single_1->expiry_days : '180' }} Days</b></p>
-                                        <p>{{ $single_1 ? $single_1->courses : '3' }} Courses</p>
-                                        <p>{{ $single_1 ? $single_1->courses : '2' }} Certificate</p>
-                                        <p>{{ $single_1 ? $single_1->badges : '1' }} Badge</p>
-                                        <p>{{ $single_1 ? $single_1->days : '180' }} Days</p>
+                                        <p><b>Membership Expires after 180 Days</b></p>
+                                        <p>3 Courses</p>
+                                        <p>2 Certificate</p>
+                                        <p>1 Badge</p>
+                                        <p>180 Days</p>
                                         <div class="single-btn">
                                             <a href="">Details</a>
                                         </div>
-                                        <div class="list-share-icon-left cus_ico_des">
-                                        <div class="buy-now">
-                                            <a href=""><i><img src="{{asset('public/assets/front/images/bay1.png')}}" alt=""></i> Buy Now</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> Favorite</a>
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="single-border">
-                                        <p><b>{{ $single_2 ? $single_2->pricing_name : 'SINGLE' }}</b></p>
+                                        <p><b>SINGLE</b></p>
                                         <div class="second-free-circle">
-                                            <h2>{{ $single_2 ? $single_2->price : '9.00' }} {{ $user_currency }}</h2>
+                                            <h2>$9.00</h2>
                                             <h3>/month</h3>
                                             <p>No Delay<br>Interview</p>
                                         </div>
-                                        <p><b>Membership Expires after {{ $single_2 ? $single_2->expiry_days : '180' }} Days</b></p>
-                                        <p>{{ $single_2 ? $single_2->courses : '3' }} Courses</p>
-                                        <p>{{ $single_2 ? $single_2->courses : '2' }} Certificate</p>
-                                        <p>{{ $single_2 ? $single_2->badges : '1' }} Badge</p>
-                                        <p>{{ $single_2 ? $single_2->days : '180' }} Days</p>
+                                        <p><b>Membership Expires after 180 Days</b></p>
+                                        <p>3 Courses</p>
+                                        <p>2 Certificate</p>
+                                        <p>1 Badge</p>
+                                        <p>180 Days</p>
                                         <div class="single-btn">
                                             <a href="">Details</a>
                                         </div>
-                                        <div class="list-share-icon-left cus_ico_des">
-                                        <div class="buy-now">
-                                            <a href=""><i><img src="{{asset('public/assets/front/images/bay1.png')}}" alt=""></i> Buy Now</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> Favorite</a>
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="single-border">
-                                        <p><b>{{ $corporate ? $corporate->pricing_name : 'CORPORATE' }}</b></p>
+                                        <p><b>Corporate</b></p>
                                         <div class="second-free-circle">
-                                            <h2 style="left: 46.5%;">{{ $corporate ? $corporate->price : '29.00' }} {{ $user_currency }}</h2>
+                                            <h2 style="left: 46.5%;">$29.00</h2>
                                             <h3 style="left: 47.5%;">/month</h3>
                                             <p>Prep Me Ahead<br>Interview</p>
                                         </div>
-                                        <p><b>Membership Expires after {{ $corporate ? $corporate->expiry_days : '180' }} Days</b></p>
-                                        <p>{{ $corporate ? $corporate->courses : '3' }} Courses</p>
-                                        <p>{{ $corporate ? $corporate->courses : '2' }} Certificate</p>
-                                        <p>{{ $corporate ? $corporate->badges : '1' }} Badge</p>
-                                        <p>{{ $corporate ? $corporate->days : '180' }} Days</p>
+                                        <p><b>Membership Expires after 180 Days</b></p>
+                                        <p>3 Courses</p>
+                                        <p>2 Certificate</p>
+                                        <p>1 Badge</p>
+                                        <p>180 Days</p>
                                         <div class="single-btn">
                                             <a href="">Details</a>
                                         </div>
-                                         <div class="list-share-icon-left cus_ico_des">
-                                        <div class="buy-now">
-                                            <a href=""><i><img src="{{asset('public/assets/front/images/bay1.png')}}" alt=""></i> Buy Now</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> Favorite</a>
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="single-border">
-                                        <p><b>{{ $enterprise ? $enterprise->pricing_name : 'ENTERPRISE' }}</b></p>
+                                        <p><b>Enterprise</b></p>
                                         <div class="second-free-circle">
-                                            <h2 style="left: 66%;">{{ $enterprise ? $enterprise->price : '99.00' }} {{ $user_currency }}</h2>
+                                            <h2 style="left: 66%;">$99.00</h2>
                                             <h3 style="left: 67%;">/month</h3>
                                             <p>Extensive<br>Interview</p>
                                         </div>
-                                        <p><b>Membership Expires after {{ $enterprise ? $enterprise->expiry_days : '180' }} Days</b></p>
-                                        <p>{{ $enterprise ? $enterprise->courses : '3' }} Courses</p>
-                                        <p>{{ $enterprise ? $enterprise->courses : '2' }} Certificate</p>
-                                        <p>{{ $enterprise ? $enterprise->badges : '1' }} Badge</p>
-                                        <p>{{ $enterprise ? $enterprise->days : '180' }} Days</p>
+                                        <p><b>Membership Expires after 180 Days</b></p>
+                                        <p>3 Courses</p>
+                                        <p>2 Certificate</p>
+                                        <p>1 Badge</p>
+                                        <p>180 Days</p>
                                         <div class="single-btn">
                                             <a href="">Details</a>
                                         </div>
-                                        <div class="list-share-icon-left cus_ico_des">
-                                        <div class="buy-now">
-                                            <a href=""><i><img src="{{asset('public/assets/front/images/bay1.png')}}" alt=""></i> Buy Now</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-heart-o" aria-hidden="true"></i> Favorite</a>
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="single-border">
-                                        <p><b>{{ $single_3 ? $single_3->pricing_name : 'SINGLE' }}</b></p>
+                                        <p><b>SINGLE</b></p>
                                         <div class="second-free-circle">
-                                            <h2 style="left: 86%;">{{ $single_3 ? $single_3->price : '9.00' }} {{ $user_currency }}</h2>
+                                            <h2 style="left: 86%;">$9.00</h2>
                                             <h3 style="left: 86.5%;">/month</h3>
                                             <p>Tailored<br>Interview</p>
                                         </div>
-                                        <p><b>Membership Expires after {{ $single_3 ? $single_3->expiry_days : '180' }} Days</b></p>
-                                        <p>{{ $single_3 ? $single_3->courses : '3' }} Courses</p>
-                                        <p>{{ $single_3 ? $single_3->courses : '2' }} Certificate</p>
-                                        <p>{{ $single_3 ? $single_3->badges : '1' }} Badge</p>
-                                        <p>{{ $single_3 ? $single_3->days : '180' }} Days</p>
+                                        <p><b>Membership Expires after 180 Days</b></p>
+                                        <p>3 Courses</p>
+                                        <p>2 Certificate</p>
+                                        <p>1 Badge</p>
+                                        <p>180 Days</p>
                                         <div class="single-btn">
                                             <a href="">Details</a>
                                         </div>
-                                        <div class="list-share-icon-left cus_ico_des">
-                                        <div class="buy-now">
-                                            <a href=""><i><img src="{{asset('public/assets/front/images/bay1.png')}}" alt=""></i> Buy Now</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
-                                        </div>
-                                        <div class="buy-now">
-                                            <a href=""><i class="fa fa-heart" aria-hidden="true"></i> Favorite</a>
-                                        </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="stages">
                                 <h2>7 Stages of our Interview Process</h2>
-                               <!--  <img src="{{asset('public/assets/front/images/interview_plan.png')}}"> 
-                               -->
-                               <div class="intervie_sec">
-                                    <div class="intervie_step">
-                                        <div class="intervie_itm intervie_itm1">
-                                            <div class="intervie_itm_tex">
-                                                <span><small>1.</small> Decide What<br> you wat</span>
-                                                <div class="intervie_tex_inr">
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span>Explore<br>yourself</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span>Research</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="intervie_itm_tex">
-                                                <span class="colo_1"><small>2.</small> Create job search<br> marketig plan</span>
-                                                <div class="intervie_tex_inr">
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_1">Make a<br>pla</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_1">Make<br> comitments to yoursels</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="intervie_itm_tex">
-                                                <span class="colo_2"><small>3.</small> Get tools<br> needed</span>
-                                                <div class="intervie_tex_inr">
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_2">Brand</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxx</span>
-                                                            <span>xxxx</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_2">People</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="midil_intervie">
-                                            <span>Gat the job You want<br>(xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)</span>
-                                        </div>
-                                        <div class="intervie_itm intervie_itm2">
-                                            <div class="intervie_itm_tex">
-                                                <span class="colo_3"><small>4.</small> Where to find<br> what you want?</span>
-                                                <div class="intervie_tex_inr">
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_3">Target<br>Companies</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxx</span>
-                                                            <span>xxxx</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_3">Target<br>People</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="intervie_itm_tex">
-                                                <span class="colo_4"><small>5.</small> what are you <br> wiliong to do?</span>
-                                                <div class="intervie_tex_inr">
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_4">Commitmets<br>to yourself</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxx</span>
-                                                            <span>xxxx</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_4">Research &<br>outreach</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_4"> "Accountability</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="intervie_itm_tex">
-                                                <span class="colo_5"><small>6.</small> What to<br> say?</span>
-                                                <div class="intervie_tex_inr">
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_5">Interview prep</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxx</span>
-                                                            <span>xxxx</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_5">Networking topics</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="intervie_tex_inr_itm">
-                                                        <span class="colo_5">Reading</span>
-                                                        <div class="intervie_tex_subinr_itm">
-                                                            <span>xxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                            <span>xxxxxxxxxxx</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <img src="{{asset('public/assets/front/images/interview_plan.png')}}">
                             </div>
                             <div class="interview_plans_text">
                                 <h2 class="plans-inteview">Interview Plan</h2>
@@ -691,100 +475,8 @@
                                         <input type="time" name="">
                                     </div>
                                 </div>
-                                <div class="button_dv">
-                                    <button class="cus-btn">Submit</button>
-                                </div>
                                 <div class="dealy-images">
-                                   <!--  <img src="{{asset('public/assets/front/images/nodelay-text.png')}}"> -->
-                                   <div class="info_curcal_sec">
-    <div class="info_curcal_pael">
-        <div class="info_medils">
-            <b>No Delay<br>Interview</b>
-        </div>
-        <div class="info_shep info_shep1">
-            <span>1. Information <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep2">
-            <span>2. Non-<br> Directive<br> Interview</span>
-        </div>
-        <div class="info_shep info_shep3">
-            <span>3. Termination <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep4">
-            <span>4. Evaluation <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep5">
-            <span>5. Routine <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep6">
-            <span>6. Views <br>assessing <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep7">
-            <span>7. Individual<br>Interview</span>
-        </div>
-        <div class="info_shep info_shep8">
-            <span>8. Exit<br>Interview</span>
-        </div>
-    </div>
-    <div class="content_info">
-        <div class="content_info_bx info_content1">
-            <p>1. Here a prepared list of questions is used to collect information from the respondent</p>
-        </div>
-        <div class="content_info_bx info_content2">
-            <p>2. In this type of interview there is
-no preplanned set of questions.
-Here the interviewer encourages
-the respondent or employee to
-talk about his/her problem,
-without questioning him/her.
-A supervisor can create a suitable
-atmosphere in which the
-employee is able to speak freely
-about the problem</p>
-        </div>
-        <div class="content_info_bx info_content3">
-            <p>3. In this type of interview a
-supervisor inform an employee
-about the reasons for termination
-and tries to maintain a positive
-relationship with the employee
-to avoid legal procedures.</p>
-        </div>
-        <div class="content_info_bx info_content4">
-            <p>4. Here executives or supervisors
-discuss with employees about
-their expected performances and
-evaluate areas that require
-improvement.</p>
-        </div>
-        <div class="content_info_bx info_content5">
-            <p>5. One of the routine functions of
-a company is evaluating candidates
-who are seeking job in the company.
-To explore the abilities and experiences
-of the applicant an organized interview
-is conducted.</p>
-        </div>
-        <div class="content_info_bx info_content6">
-            <p>6. To know the views of the consumers
-about the products and services of the
-company this type of interviews are
-conducted.</p>
-        </div>
-        <div class="content_info_bx info_content7">
-            <p>7. In this case an individual is interviewed.
-Here a supervisor takes measures to rectify
-the behavior of an employee.</p>
-        </div>
-        <div class="content_info_bx info_content8">
-            <p>8. In this method the interviewer tries to
-find out the causes of employee turnover.
-That is why an employee is leaving the
-organization can be revealed by this type
-of interviews. </p>
-        </div>      
-    </div>
-</div>
+                                    <img src="{{asset('public/assets/front/images/nodelay-text.png')}}">
                                 </div>
                                 <section class="get_more">
                                     <div class="container">
@@ -969,43 +661,8 @@ of interviews. </p>
                                     <input type="time" name="">
                                 </div>
                             </div>
-                            <div class="button_dv">
-                                    <button class="cus-btn">Submit</button>
-                                </div>
                             <div class="dealy-images">
-                                <!-- <img src="{{asset('public/assets/front/images/prep-head.png')}}" style="width: 600px; height: auto;"> -->
-                                <div class="info_curcal_sec">
-    <div class="info_curcal_pael">
-        <div class="info_medils">
-            <b>Prep Me<br>Ahead <r>Interview</b>
-        </div>
-        <div class="info_shep info_shep1">
-            <span>1. Employment <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep2">
-            <span>2. Direct<br> Interview</span>
-        </div>
-        <div class="info_shep info_shep3">
-            <span>3. Indirect <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep4">
-            <span>4. Board or Pane <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep5">
-            <span>5. Group <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep6">
-            <span>6. In Department <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep7">
-            <span>6. Stress<br>Interview</span>
-        </div>
-        <div class="info_shep info_shep8">
-            <span>8. Patterned<br>Interview</span>
-        </div>
-    </div>
-    
-</div>
+                                <img src="{{asset('public/assets/front/images/prep-head.png')}}" style="width: 600px; height: auto;">
                             </div>
                             <section class="get_more">
                                 <div class="container">
@@ -1190,48 +847,13 @@ of interviews. </p>
                                 </div>
                             </div>
                         </div>
-                        <div class="button_dv">
-                                    <button class="cus-btn">Submit</button>
-                                </div>
                         <section class="plan-image">
                             <div class="container">
                                <div class="plan-img-text">
-                                    <!-- <img src="{{asset('public/assets/front/images/extensive_image.png')}}" style="width: 600px; height: auto;"> -->
-                                    <div class="info_curcal_sec">
-    <div class="info_curcal_pael">
-        <div class="info_medils">
-            <b>Prep Me<br>Ahead <br>Interview</b>
-        </div>
-        <div class="info_shep info_shep1">
-            <span>1. Employment <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep2">
-            <span>2. Direct<br> Interview</span>
-        </div>
-        <div class="info_shep info_shep3">
-            <span>3. Indirect <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep4">
-            <span>4. Board or Pane <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep5">
-            <span>5. Group <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep6">
-            <span>6. In Department <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep7">
-            <span>7. Stress<br>Interview</span>
-        </div>
-        <div class="info_shep info_shep8">
-            <span>8. Patterned<br>Interview</span>
-        </div>
-    </div>
-    
-</div>
+                                    <img src="{{asset('public/assets/front/images/extensive_image.png')}}" style="width: 600px; height: auto;">
                                 </div>
-                                <div class="images-over-heading pogi_re">
-                                <!--     <p class="image-center-text">Extensive<br> Interview<br> Plan</p>
+                                <div class="images-over-heading">
+                                    <p class="image-center-text">Extensive<br> Interview<br> Plan</p>
                                     <p class="first-text">1. Information<br> Interview</p>
                                     <p class="second-text">2. Non<br> Directive<br> Interview</p>
                                     <p class="third-text">3. Termination <br>Interview</p>
@@ -1240,7 +862,7 @@ of interviews. </p>
                                     <p class="sixth-text">6. Views<br> assessing<br> Interview</p>
                                     <p class="seventh-text">7. Individual<br> Interview</p>
                                     <p class="eight-text">8. Exit<br> Interview</p>
-                                </div>  -->
+                                </div> 
                             </div>
                         </section>
                         <section class="get_more">
@@ -1425,44 +1047,8 @@ of interviews. </p>
                                     <input type="time" name="">
                                 </div>
                             </div>
-                            <div class="button_dv">
-                                    <button class="cus-btn">Submit</button>
-                                </div>
                             <div class="dealy-images">
-                                <!-- <img src="{{asset('public/assets/front/images/tailored-interview.png')}}" style="width: 600px; height: auto;"> -->
-                                <div class="info_curcal_sec">
-    <div class="info_curcal_pael">
-        <div class="info_medils">
-            <b>Tailored<br> Interview<br>Plan </b>
-        </div>
-        <div class="info_shep info_shep1">
-            <span>1. Information <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep2">
-            <span>2. Non-
-Directive<br> Interview</span>
-        </div>
-        <div class="info_shep info_shep3">
-            <span>3. Termination <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep4">
-            <span>4. Evaluation<br>Interview</span>
-        </div>
-        <div class="info_shep info_shep5">
-            <span>5. Routine <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep6">
-            <span>6. Views <br> assessing <br>Interview</span>
-        </div>
-        <div class="info_shep info_shep7">
-            <span>6. Individual<br>Interview</span>
-        </div>
-        <div class="info_shep info_shep8">
-            <span>8. Exit<br>Interview</span>
-        </div>
-    </div>
-    
-</div>
+                                <img src="{{asset('public/assets/front/images/tailored-interview.png')}}" style="width: 600px; height: auto;">
                             </div>
                             <section class="get_more">
                                 <div class="container">

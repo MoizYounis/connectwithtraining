@@ -2,6 +2,12 @@
 @section('title')Latest Courses | {{$gs->title}} @endsection
 @section('content')
 
+<div class="fix_btn">
+       <a href="{{url('coming-soon')}}"><img src="{{asset('public/assets/front/images/viewbt.png')}}"/></a>
+ </div>
+<div class="fix_btn2">
+            <a href="{{url('coming-soon')}}"><img src="{{asset('public/assets/front/images/live.png')}}"/></a>
+         </div>
 <main id="maincontent" class="page-main">
 	<div class="columns">
 		<div class="column main">
@@ -293,7 +299,7 @@
 		</div>
 	</div>
 </main>
-
+  
 
 @endsection
 @section('script')
@@ -337,4 +343,6 @@
       }
     }
 </script>
+
+
 @endsection
