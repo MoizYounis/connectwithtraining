@@ -84,41 +84,7 @@
                             @endif
                         </span>
                     </div>
-                    <div class="account">
-                        <div class="account-profile">
-                            <h2>Account</h2>
-                            <p>Edit your account settings and chamge tour password here</p>
-                        </div>
-                        <div class="edit-email">
-                            <h2>Email</h2>
-                            <form method="POST" action="{{ route('password.email') }}">
-                                @csrf
-                                <div class="edit-col">
-                                    <input type="text" name="email" placeholder="Your email address is {{Auth::user()->email}}">
-                                    <button type="submit" class="fa fa-pencil" aria-hidden="true"></button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="edit-email">
-                            <h2>Password</h2>
-                            <form action="{{ route('user.change_password') }}" method="post">
-                                @csrf
-                                @method('PUT')
-                                <div class="edit-col">
-                                    <input type="password" name="oldword" placeholder="Enter Current Password">
-                                </div>
-                                <div class="edit-col">
-                                    <input type="password" name="newword" placeholder="Enter New Password">
-                                </div>
-                                <div class="edit-col">
-                                    <input type="password" name="newword_confirmation" placeholder="Confirm Password">
-                                </div>
-                                <div class="change-pass">
-                                    <button type=="submit">Change Password</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    
                     <!--<div class="account">-->
                     <!--    <div class="account-profile">-->
                     <!--        <h2>Privacy</h2>-->
@@ -180,23 +146,6 @@
                     <!--        </div>-->
                     <!--    </div>-->
                     <!--</div>-->
-                    <div class="danger">
-                        <div class="danger-head">
-                            <h2>Danger Zone</h2>
-                            <p>Delete your account permanently</p>
-                        </div>
-                        <div class="delete-info">
-                            <h2>Delete Your Account</h2>
-                            <p><span>Warning:</span>  If you delete your account, you will be unsubscribed from all your courses, and will lose access forever</p>
-                        </div>
-                        <div class="delete-btn">
-                            <form method="post" class="delete_form" action="{{ url('user/account/delete')}}">
-                                {{ csrf_field() }}
-                                <input type="password" name="password" placeholder="Password...">
-                                <button type="submit">Delete</button>
-                            </form>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

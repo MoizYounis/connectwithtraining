@@ -15,6 +15,7 @@ use Validator;
 use Hash;
 use Illuminate\Support\Facades\Input;
 use Session;
+use App\Model\Blog;
 
 class HomeController extends Controller
 {
@@ -176,4 +177,11 @@ class HomeController extends Controller
         }
     }
     
+    public function readBlog($id) {
+        $blog = Blog::find($id);
+        if(empty($blog)){
+            return json_encode(["error"=>"true", "msg"=>"Blog Not Found!"]);
+        }
+        return view('front.read_blog', compact('blog'));
+    }
 }

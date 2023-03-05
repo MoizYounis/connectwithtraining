@@ -48,7 +48,11 @@ class ReferController extends Controller
         
     }
     
-    public function referprogram(){
+    public function referProgram(){
         return view('front.refer.refer_program');
+    }
+    
+    public function referProgramInvitation(){
+        return view('front.refer.refer_program_invitation');
     }
 }

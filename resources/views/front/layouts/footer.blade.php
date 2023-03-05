@@ -1,5 +1,5 @@
 @php
-$blogs = App\Model\Blog::Join('blog_categories as bc', 'bc.id', '=' ,'blogs.blog_cat_id')->selectRaw('blogs.blog_title, bc.blog_cat_name, blogs.blog_content')->where('blogs.blog_status', 'Publish')->orderBy('blogs.id', 'DESC')->limit(4)->get();
+$blogs = App\Model\Blog::Join('blog_categories as bc', 'bc.id', '=' ,'blogs.blog_cat_id')->selectRaw('blogs.id, blogs.blog_title, bc.blog_cat_name, blogs.blog_content')->where('blogs.blog_status', 'Publish')->orderBy('blogs.id', 'DESC')->limit(4)->get();
 @endphp
 
     <!-- The Modal -->
@@ -188,7 +188,7 @@ $blogs = App\Model\Blog::Join('blog_categories as bc', 'bc.id', '=' ,'blogs.blog
 									    <?php
 									    if(strlen($blog->blog_content)>20){
 											$blogContent = substr($blog->blog_content, 0, 260);
-											// $blogContent = $blogContent."<a href='#'>... Read full article</a>";
+											$blogContent = $blogContent."<a href=".url('read_blog/'.$blog->id).">... Read full article</a>";
 									     }
 										else{
 										    $blogContent = $blog->blog_content;

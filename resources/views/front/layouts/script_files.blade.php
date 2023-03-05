@@ -5,10 +5,20 @@
 <script src="{{asset('public/assets/front/notifications/js/lobibox.min.js')}}"></script>
 
 <script src="{{asset('public/assets/front/notifications/js/notifications.min.js')}}"></script>
-
 <script src="{{asset('public/assets/front/notifications/js/notification-custom-script.js')}}"></script>
 
+<script src="{{asset('public/assets/front/js/stripe.js')}}"></script>
 <!--<script src="{{asset('public/assets/front/js/main.js')}}"></script>-->
+{{-- newly added by --}}
+{{-- <script src="{{asset('public/assets/front/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/assets/front/js/popper.min.js')}}"></script> --}}
+{{-- <script src="{{asset('public/assets/front/js/vendor/modernizr-3.6.0.min.js')}}"></script>
+<script src="{{asset('public/assets/front/js/vendor/wow.min.js')}}"></script> --}}
+{{-- <script src="{{asset('public/assets/front/js/plugins.js')}}"></script>
+<script src="{{asset('public/assets/front/js/lazysizes.js')}}"></script>
+<script src="{{asset('public/assets/front/js/main.js')}}"></script> --}}
+
+
 
 
 
@@ -25,7 +35,7 @@ function googleTranslateElementInit() {
 
 
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 
 <script>

@@ -2,328 +2,421 @@
 
 <html class="no-js" lang="en">
 
-	<head>
+<head>
 
-		<meta name="description" content="description">
+    <meta name="description" content="description">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>@yield('title')</title>
+    <title>@yield('title')</title>
 
-		<!--favicon-->
+    <!--favicon-->
 
-  		<link rel="icon" href="{{asset('public/assets/front/img/logo/')}}/{{$gs->favicon}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('public/assets/front/img/logo/') }}/{{ $gs->favicon }}" type="image/x-icon">
 
-  		
 
-  		    
 
-  		<link rel="stylesheet" href="{{asset('public/assets/front/css/custom.css')}}">
 
-  		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
-		<link rel="stylesheet" href="{{asset('public/assets/front/notifications/css/lobibox.min.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('public/assets/front/css/custom.css') }}">
 
-		<!-- swiper slider -->
-		<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-		
+    <link rel="stylesheet" href="{{ asset('public/assets/front/notifications/css/lobibox.min.css') }}" />
 
-		@if( Request::segment(1)=='' || Request::segment(1)=='courses' || Request::segment(1)=='cart' )
+    <!-- swiper slider -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 
-  	        
 
-  	    @else
 
-  	        <link rel="stylesheet" href="{{asset('public/assets/front/css/style.css')}}">
+    @if (Request::segment(1) == '' || Request::segment(1) == 'courses' || Request::segment(1) == 'cart')
+    @else
+        <link rel="stylesheet" href="{{ asset('public/assets/front/css/style.css') }}">
+    @endif
 
-  	    @endif
 
-    		
 
-        <script src="{{asset('public/assets/front/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('public/assets/front/js/jquery.min.js') }}"></script>
 
-        <script src="{{asset('public/assets/front/js/jquery.bxslider.min.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('public/assets/front/js/jquery.bxslider.min.js') }}" type="text/javascript"></script>
 
-		<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-        
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-	</head>
 
-	<body>
+</head>
 
-	    <div class="page-wrapper">
+<body>
 
-		    <header id="header">
+    <div class="page-wrapper">
 
-				<div class="header-top">
+        <header id="header">
 
-					<div class="panel wrapper">
+            <div class="header-top">
 
-						<div class="panel header">
+                <div class="panel wrapper">
 
-							<div class="switcher country">
+                    <div class="panel header">
 
-								<div class="head-top-drp country">
-                                    
-                                    <?php
-                                        $user_currency = Helper::getCurrencyWithIp();
-                                        $currency_list = Helper::getCurrencyList();
-                                    ?>
-									<select class="currencyList" onfocus='this.size=5;' onblur='this.size=0;' onchange="this.size=1; this.blur(); setCurrency(this, '{{csrf_token()}}')">
-									    @foreach($currency_list as $key => $value)
-									        <option value="{{$value}}" @if($key == $user_currency) selected @endif>{{$key}}</option>
-									    @endforeach
-									</select>
-									
-									<div class="flags_img"></div>
+                        <div class="switcher country">
 
-								</div>
+                            <div class="head-top-drp country">
 
-							</div>
+                                <?php
+                                $user_currency = Helper::getCurrencyWithIp();
+                                $currency_list = Helper::getCurrencyList();
+                                ?>
+                                <select class="currencyList" onfocus='this.size=5;' onblur='this.size=0;'
+                                    onchange="this.size=1; this.blur(); setCurrency(this, '{{ csrf_token() }}')">
+                                    @foreach ($currency_list as $key => $value)
+                                        <option value="{{ $value }}"
+                                            @if ($key == $user_currency) selected @endif>{{ $key }}
+                                        </option>
+                                    @endforeach
+                                </select>
 
-							<div class="switcher language switcher-language">
+                                <div class="flags_img"></div>
 
-							    <div id="google_translate_element"></div>
+                            </div>
 
-								<!--<div class="head-top-drp lng">-->
+                        </div>
 
-								<!--	<select>-->
+                        <div class="switcher language switcher-language">
 
-								<!--		<option>ENGLISH</option>-->
+                            <div id="google_translate_element"></div>
 
-								<!--		<option>HINDI</option>-->
+                            <!--<div class="head-top-drp lng">-->
 
-								<!--		<option>ARABIC</option>-->
+                            <!--	<select>-->
 
-								<!--	</select>-->
+                            <!--		<option>ENGLISH</option>-->
 
-								<!--</div>-->
+                            <!--		<option>HINDI</option>-->
 
-							</div>
+                            <!--		<option>ARABIC</option>-->
 
-						</div>
+                            <!--	</select>-->
 
-					</div>
+                            <!--</div>-->
 
-				</div>
+                        </div>
 
-		    <!--End Top Header-->
+                    </div>
 
-		    <!--Header-->
+                </div>
 
-		        <div class="header-bottom">
+            </div>
 
-					<a class="logo" href="{{route('home')}}"><img src="{{asset('public/assets/front/images/logo.png')}}" alt=""/></a>
+            <!--End Top Header-->
 
-					<nav class="navbar">
+            <!--Header-->
 
-						<div class="mob-menu">
+            <div class="header-bottom">
 
-							<span></span>
+                <a class="logo" href="{{ route('home') }}"><img
+                        src="{{ asset('public/assets/front/images/logo.png') }}" alt="" /></a>
 
-							<span></span>
+                <nav class="navbar">
 
-							<span></span>
+                    <div class="mob-menu">
 
-						</div>
+                        <span></span>
 
-						<ul class="nav navbar-nav">
+                        <span></span>
 
-							<li class=""><a href="{{url('how-it-works')}}">How it works</a></li>
+                        <span></span>
 
-							<li class="ui-menu-icon">
+                    </div>
 
-								<a href="javascript:void(0);">Courses</a>
+                    <ul class="nav navbar-nav">
 
-								<ul class="child-menu">
+                        <li class=""><a href="{{ url('how-it-works') }}">How it works</a></li>
 
-									<li class="online-crs"><a href="{{url('courses/type/online')}}"><i class="fa fa-graduation-cap"></i>Online Courses</a></li>
+                        <li class="ui-menu-icon">
 
-									<li class="onsight-cls"><a href="{{url('courses/type/onsite')}}"><i class="fa fa-users"></i>Onsight Classroom </a></li>
+                            <a href="javascript:void(0);">Courses</a>
 
-									<li class="yrp"><a href="{{url('courses/type/your-pace')}}"><i class="fa fa-eercast"></i>Your Pace</a></li>
+                            <ul class="child-menu">
 
-									<li class="pymt-pln"><a href="{{url('payment-plan')}}"><i class="fa fa-credit-card"></i>Payment Plan</a></li>
+                                <li class="online-crs"><a href="{{ url('courses/type/online') }}"><i
+                                            class="fa fa-graduation-cap"></i>Online Courses</a></li>
 
-								</ul>
+                                <li class="onsight-cls"><a href="{{ url('courses/type/onsite') }}"><i
+                                            class="fa fa-users"></i>Onsight Classroom </a></li>
 
-							</li>
+                                <li class="yrp"><a href="{{ url('courses/type/your-pace') }}"><i
+                                            class="fa fa-eercast"></i>Your Pace</a></li>
 
-							<li class="ui-menu-icon">
+                                <li class="pymt-pln"><a href="{{ url('payment-plan') }}"><i
+                                            class="fa fa-credit-card"></i>Payment Plan</a></li>
 
-								<a href="javascript:void(0);">Get More</a>
+                            </ul>
 
-								<ul class="child-menu">
+                        </li>
 
-									<li class="online-crs">
+                        <li class="ui-menu-icon">
 
-									    <!--<a href="{{url('courses')}}"><i class="fa fa-graduation-cap"></i>Online Courses</a>-->
+                            <a href="javascript:void(0);">Get More</a>
 
-									    <nav>
+                            <ul class="child-menu">
 
-                                            <ul>
+                                <li class="online-crs">
 
-                                                <li><a href="{{url('coming-soon')}}"><i class="fa fa-graduation-cap"></i>Careers</a>
+                                    <!--<a href="{{ url('courses') }}"><i class="fa fa-graduation-cap"></i>Online Courses</a>-->
 
-                                                    <!-- First Tier Drop Down -->
+                                    <nav>
 
-                                                    <ul>
+                                        <ul>
 
-                                                        <li><a href="#"> <i class="fa fa-group"></i> Preparations</a>
+                                            <li><a href="{{ url('coming-soon') }}"><i
+                                                        class="fa fa-graduation-cap"></i>Careers</a>
 
-                                                            <ul class="another-sunmenu">
+                                                <!-- First Tier Drop Down -->
 
-                                                            <li><a href="{{url('resume-building')}}"> <i class="fa fa-file-o"></i> Resume Building</a></li>
+                                                <ul>
 
-                                                            <li><a href="{{url('extensive-interview-plans')}}"><i class="fa fa-pie-chart"></i> Interview Plans</a></li>
+                                                    <li><a href="#"> <i class="fa fa-group"></i> Preparations</a>
 
-                                                            <li><a href="{{url('interview-questions')}}"><i class="fa fa-question"></i> Interview Questions</a></li>
+                                                        <ul class="another-sunmenu">
+
+                                                            <li><a href="{{ url('resume-building') }}"> <i
+                                                                        class="fa fa-file-o"></i> Resume Building</a>
+                                                            </li>
+
+                                                            <li><a href="{{ url('extensive-interview-plans') }}"><i
+                                                                        class="fa fa-pie-chart"></i> Interview Plans</a>
+                                                            </li>
+
+                                                            <li><a href="{{ url('interview-questions') }}"><i
+                                                                        class="fa fa-question"></i> Interview
+                                                                    Questions</a></li>
 
                                                         </ul>
 
-                                                        </li>
+                                                    </li>
 
-                                                        <li><a href="{{url('coming-soon')}}"> <i class="fa fa-heart-o"></i> Jobs</a></li>
+                                                    <li><a href="{{ url('coming-soon') }}"> <i
+                                                                class="fa fa-heart-o"></i> Jobs</a></li>
 
-                                                        <li><a href="{{url('coming-soon')}}"> <i class="fa fa-graduation-cap"></i> Placement</a>
+                                                    <li><a href="{{ url('coming-soon') }}"> <i
+                                                                class="fa fa-graduation-cap"></i> Placement</a>
 
-                                                    	<!-- Second Tier Drop Down -->
+                                                        <!-- Second Tier Drop Down -->
 
-                                                        
 
-                                                        </li>
 
-                                                    </ul>
+                                                    </li>
 
-                                                </li>
+                                                </ul>
 
-                                                <li><a href="{{url('coming-soon')}}"><i class="fa fa-handshake-o"></i>Franchise</a></li>
+                                            </li>
 
-                                                <!--<li><a href="{{url('courses')}}"><i class="fa fa-vcard"></i>Referral Prog.</a></li>-->
+                                            <li><a href="{{ url('coming-soon') }}"><i
+                                                        class="fa fa-handshake-o"></i>Franchise</a></li>
 
-                                                <li><a href="{{url('coming-soon')}}"><i class="fa fa-bell"></i>Notification</a></li>
+                                           <li><a href="{{ url('refer-program') }}"><i class="fa fa-vcard"></i>Referral Prog.</a></li>
 
-                                                <li><a href="{{url('coming-soon')}}"><i class="fa fa-credit-card"></i>Connect Credit</a></li>
+                                            <li><a href="{{ url('coming-soon') }}"><i
+                                                        class="fa fa-bell"></i>Notification</a></li>
 
-                                                <li><a href="{{url('coming-soon')}}"><i class="fa fa-calendar"></i>Host A Training</a></li>
+                                            <li><a href="{{ url('coming-soon') }}"><i
+                                                        class="fa fa-credit-card"></i>Connect Credit</a></li>
 
-                                                <li><a href="{{url('coming-soon')}}"><i class="fa fa-graduation-cap"></i>Internship</a></li>
+                                            <li><a href="{{ url('coming-soon') }}"><i class="fa fa-calendar"></i>Host A
+                                                    Training</a></li>
 
-                                                <li><a href="{{url('gift-card')}}"><i class="fa fa-gift"></i>Gift Card</a></li>
+                                            <li><a href="{{ url('coming-soon') }}"><i
+                                                        class="fa fa-graduation-cap"></i>Internship</a></li>
 
-                                                <li><a href="{{url('refer-a-friend')}}"><i class="fa fa-user-plus"></i>Invite Friends</a></li>
+                                            <li><a href="{{ url('gift-card') }}"><i class="fa fa-gift"></i>Gift
+                                                    Card</a></li>
 
-                                            </ul>
+                                            <li><a href="{{ url('refer-a-friend') }}"><i
+                                                        class="fa fa-user-plus"></i>Invite Friends</a></li>
 
-                                        </nav>
+                                        </ul>
 
-									</li>
+                                    </nav>
 
-								</ul>
+                                </li>
 
-							</li>
+                            </ul>
 
-							
+                        </li>
 
-							<?php
+
+
+                        <?php
 
 	                        if(isset(Auth::user()->id) && Auth::user()->id != ''){ ?>
 
-    							<li class="ui-menu-icon">
+                        <li class="ui-menu-icon">
 
-    							    <a href="{{route('user_dashboard')}}"><?= ucwords(Auth::user()->first_name); ?></a>
+                            <a href="{{ route('user_dashboard') }}"><?= ucwords(Auth::user()->first_name) ?></a>
 
-    							    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                style="display: none;">
 
-                                        @csrf
+                                @csrf
 
-                                    </form>
+                            </form>
+							
+							<ul class="child-menu">
 
-    							    <ul class="child-menu">
+                                <li class="online-crs">
 
-    									<li class="onsight-cls"><a href="{{url('user/profile')}}"><i class="fa fa-users"></i>My Profile </a></li>
+                                    <!--<a href="{{ url('courses') }}"><i class="fa fa-graduation-cap"></i>Online Courses</a>-->
 
-    									<li class="online-crs"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-graduation-cap"></i>Logout</a></li>
+                                    <nav>
 
-    								</ul>
+                                        <ul>
 
-    							</li>
+                                            <li><a href="#"><i
+                                                        class="fa fa-users"></i>My Profile</a>
 
-							<?php }
+                                                <!-- First Tier Drop Down -->
+
+                                                <ul style="left: 50%; z-index: 1;">
+
+                                                    <li><a href="{{ url('user/profile') }}"> <i class="fa fa-group"></i>Edit Profile</a></li>
+                                                    <li><a href="{{ route('get.change.password') }}"> <i class="fa fa-group"></i>Change Password</a></li>
+                                                    <li><a href="#"> <i class="fa fa-money"></i> Payment</a>
+
+                                                        <ul class="another-sunmenu" style="left: -310px !important; z-index: 1;">
+
+                                                            <li><a href="{{ route('add.payment.info') }}"> <i
+                                                                        class="fa fa-file-o"></i> Add Payment</a>
+                                                            </li>
+
+                                                            <li><a href="{{ route('update.payment.info') }}"><i
+                                                                        class="fa fa-pie-chart"></i> Update Payment</a>
+                                                            </li>
+
+                                                            <li><a href="{{ url('interview-questions') }}"><i
+                                                                        class="fa fa-question"></i> Installment</a></li>
+
+                                                        </ul>
+
+                                                    </li>
+                                                    <li><a href="{{ route('delete_account') }}"> <i class="fa fa-group"></i>Delete Account</a></li>
+
+                                                </ul>
+
+                                            
+												<li class="online-crs"><a href="{{ route('logout') }}"
+													onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+														class="fa fa-graduation-cap"></i>Logout</a></li>
+
+                                            </li>
+
+                                        </ul>
+
+                                    </nav>
+
+                                </li>
+
+                            </ul>
+							
+                            {{-- <ul class="child-menu">
+
+                                <li class="onsight-cls"><a href="{{ url('user/profile') }}"><i
+                                            class="fa fa-users"></i>My Profile </a></li>
+
+                                <li class="onsight-cls"><a href="{{ route('delete_account') }}"><i
+                                            class="fa fa-users"></i>Delete Account </a></li>
+
+                                
+
+                                <li class="online-crs"><a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
+                                            class="fa fa-graduation-cap"></i>Logout</a></li>
+
+
+
+                            </ul> --}}
+
+                        </li>
+
+                        <?php }
 
 							else{ ?>
 
-						        <li class="ui-menu-icon">
+                        <li class="ui-menu-icon">
 
-	                                <a href="{{route('login')}}"><b>I'm In!</b> </a>
-	                                
-	                                <ul class="child-menu">
+                            <a href="{{ route('login') }}"><b>I'm In!</b> </a>
 
-    									<li class="online-crs"><a href="{{url('login')}}"><i class="fa fa-graduation-cap"></i>Login</a></li>
-    
-    									<li class="onsight-cls"><a href="{{url('login')}}#signup-tab-content"><i class="fa fa-users"></i>Signup </a></li>
-    
-    								</ul>
+                            <ul class="child-menu">
 
-							    </li>
+                                <li class="online-crs"><a href="{{ url('login') }}"><i
+                                            class="fa fa-graduation-cap"></i>Login</a></li>
 
-							<?php }?>
+                                <li class="onsight-cls"><a href="{{ url('register') }}#signup-tab-content"><i
+                                            class="fa fa-users"></i>Signup </a></li>
 
-						</ul>
+                            </ul>
 
-					</nav>
+                        </li>
 
-					<div class="minicart-wrapper link-inline">
+                        <?php }?>
 
-						<a href="{{url('cart')}}" class="action showcart cart-icon cartCount" data-count="<?= App\Helpers\Helper::getcountcart(); ?>" style="text-decoration: none;">
+                    </ul>
 
-							<span class="desktop-userTitle"><i class="fa fa-cart-plus" aria-hidden="true"></i></span>
+                </nav>
 
-						</a>
+                <div class="minicart-wrapper link-inline">
 
-					</div>
+                    <a href="{{ url('cart') }}" class="action showcart cart-icon cartCount"
+                        data-count="<?= App\Helpers\Helper::getcountcart() ?>" style="text-decoration: none;">
 
-				</div>
+                        <span class="desktop-userTitle"><i class="fa fa-cart-plus" aria-hidden="true"></i></span>
 
-		    <!--End Header-->
+                    </a>
 
-		    <!--Mobile Menu-->
+                </div>
 
-                <div class="mobile-nav-wrapper" role="navigation" style="display:none;">
+            </div>
 
-            		<div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
+            <!--End Header-->
 
-                    <ul id="MobileNav" class="mobile-nav">
+            <!--Mobile Menu-->
 
-                    	<li class="lvl1 parent megamenu"><a href="{{url('coming-soon')}}">How it works</a></li>
+            <div class="mobile-nav-wrapper" role="navigation" style="display:none;">
 
-                    	<li class="lvl1 parent megamenu"><a href="">Courses <i class="anm anm-plus-l"></i></a>
+                <div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
 
-            	          <ul>
+                <ul id="MobileNav" class="mobile-nav">
 
-            	            <li><a href="{{url('courses/type/online')}}" class="site-nav"><i class="fa fa-graduation-cap"></i> online Course</a></li>
+                    <li class="lvl1 parent megamenu"><a href="{{ url('coming-soon') }}">How it works</a></li>
 
-            	            <li><a href="{{url('courses/type/onsite')}}" class="site-nav"><i class="fa fa-users"></i> Onsight Classroom </a></li>
+                    <li class="lvl1 parent megamenu"><a href="">Courses <i class="anm anm-plus-l"></i></a>
 
-            	            <li><a href="{{url('courses/type/your-pace')}}" class="site-nav"><i class="fa fa-eercast"></i> Your Pace</a></li>
+                        <ul>
 
-            	            <li><a href="{{url('courses/type/payment-plan')}}" class="site-nav"><i class="fa fa-credit-card"></i> Payment Plan</a></li>
+                            <li><a href="{{ url('courses/type/online') }}" class="site-nav"><i
+                                        class="fa fa-graduation-cap"></i> online Course</a></li>
 
-            	          </ul>
+                            <li><a href="{{ url('courses/type/onsite') }}" class="site-nav"><i
+                                        class="fa fa-users"></i> Onsight Classroom </a></li>
 
-            	        </li>
+                            <li><a href="{{ url('courses/type/your-pace') }}" class="site-nav"><i
+                                        class="fa fa-eercast"></i> Your Pace</a></li>
 
-            	        <li class="lvl1 parent megamenu"><a href="{{url('coming-soon')}}">Get More</a></li>
+                            <li><a href="{{ url('courses/type/payment-plan') }}" class="site-nav"><i
+                                        class="fa fa-credit-card"></i> Payment Plan</a></li>
 
-            	        <li class="lvl1 parent megamenu"><a href="{{url('login')}}">I'm In!</a></li>
+                        </ul>
 
-                  	</ul>
+                    </li>
 
-            	</div>
+                    <li class="lvl1 parent megamenu"><a href="{{ url('coming-soon') }}">Get More</a></li>
 
-            	<!--End Mobile Menu-->
+                    <li class="lvl1 parent megamenu"><a href="{{ url('login') }}">I'm In!</a></li>
 
-		  </header>
+                </ul>
+
+            </div>
+
+            <!--End Mobile Menu-->
+
+        </header>

@@ -27,14 +27,14 @@ class CourseController extends Controller
             ->leftjoin('about_courses as ac', 'ac.course_id', '=', 'c.id')
             ->join('authors as a', 'a.id', '=', 'c.author_id')
             ->where('c.course_learning_status', $slug)
-            ->select('c.*', 'ac.course_details', 'cat.category_name', 'a.author_name')->orderBy('c.id', 'DESC')->paginate(16);
+            ->select('c.*', 'ac.course_details', 'cat.category_name', 'a.author_name')->orderBy('c.id', 'DESC')->get();
         }
         else{
             $course_list = DB::table('courses as c')
             ->join('categories as cat', 'c.category_id', '=', 'cat.id')
             ->leftjoin('about_courses as ac', 'ac.course_id', '=', 'c.id')
             ->join('authors as a', 'a.id', '=', 'c.author_id')
-            ->select('c.*', 'ac.course_details', 'cat.category_name', 'a.author_name')->orderBy('c.id', 'DESC')->paginate(16);
+            ->select('c.*', 'ac.course_details', 'cat.category_name', 'a.author_name')->orderBy('c.id', 'DESC')->get();
         }
         
         $category_data = DB::table('categories')

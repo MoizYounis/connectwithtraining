@@ -207,6 +207,7 @@ class CartController extends Controller
         ->join('categories as cat', 'c.category_id', '=', 'cat.id')
         ->join('about_courses as ac', 'ac.course_id', '=', 'c.id')->where('cart.user_id', Auth::user()->id)
         ->select('c.*', 'cat.category_name', 'ac.course_details')->orderBy('cart.id', 'DESC')->get();
+        
         return view('front.cart.order_summary', compact('cart'));
     }
     
