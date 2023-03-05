@@ -111,7 +111,7 @@ Route::group(['middleware' => ['auth', 'user']], function () {
     Route::get('/user/password', 'Front\UserController@user_password')->name('user_password');
     Route::any('/user/changePassword', 'Front\UserController@change_password')->name('user.change_password');
     Route::post('user/account/delete', 'Front\UserController@delete_account');
-
+    Route::get('/user/installments', 'Front\UserController@userInstallments')->name('user.installments');
     //user order list
     Route::get('user/myorders', 'Front\UserController@my_orders');
     Route::any('user/order/detail/{invoice_order_id}', 'Front\UserController@order_invoice_detail');

@@ -293,7 +293,7 @@
                                                                         class="fa fa-pie-chart"></i> Update Payment</a>
                                                             </li>
 
-                                                            <li><a href="{{ url('interview-questions') }}"><i
+                                                            <li><a href="{{ route('user.installments') }}"><i
                                                                         class="fa fa-question"></i> Installment</a></li>
 
                                                         </ul>

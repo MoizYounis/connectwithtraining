@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Model\Purchase;
 use App\Model\User_address;
 use App\User;
 use DB;
@@ -209,5 +210,10 @@ class UserController extends Controller
             'expiry_year' => $request->expiry_year ? $request->expiry_year : $user->expiry_year,
         ]);
         return redirect()->route('add.payment.info')->withSuccess('Your Account Info Updated successfully!');
+    }
+    
+    public function userInstallments() {
+        $purchases = Purchase::with('user')->where('user_id', auth()->user()->id)->get();
+        return view('front.user.installments', compact('purchases'));
     }
 }
