@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
 use App\Model\Purchase;
+use App\User;
 use Stripe;
 use Carbon\Carbon;
 
@@ -89,7 +90,7 @@ class PaymentController extends Controller
             "name" => $request->fname . " " . $request->lname,
             "source" => $request->stripeToken,
         ));
-        $user = auth()->user();
+        $user = User::where('id', auth()->user()->id)->first();
         $user->stripe_id = $customer->id;
         $user->save();
         
@@ -97,9 +98,8 @@ class PaymentController extends Controller
             'amount' => (int) $request->total_amount * 100,
             'currency' => 'usd',
             'customer' => $customer->id,
-            'description' => "Test Payment from connect with training Moiz",
+            'description' => "Test Payment from connect with training",
         ]);
-        
         $date = date('Y-m-d');
         for ($i=0; $i < (int)$request->number_of_installments; $i++) { 
             Purchase::create([
@@ -111,8 +111,8 @@ class PaymentController extends Controller
                 'status' => $i == 0 ? 'PAID' : 'PENDING'
             ]);
         }
-        dd(["SUccess", $charge]);
-        return redirect('thankyou');
+        return json_encode(['error' => 'false', 'msg' => 'Payment Successfully Done!']);
+        // return redirect('thankyou');
     }
 
     public function thankyou()

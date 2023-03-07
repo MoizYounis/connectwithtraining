@@ -14,7 +14,7 @@
 
         <div class="container" style="max-width: 1223px;">
 
-            <h2>Paymnet Plan</h2>
+            <h2>Payment Plan</h2>
 
         </div>
 
@@ -657,7 +657,7 @@
 
                                 <div class="save-card">
 
-                                    <button type="submit">Place order <i class="fa fa-arrow-circle-right"></i></button>
+                                    <button style="cursor: pointer;" type="submit">Place order <i class="fa fa-arrow-circle-right"></i></button>
 
                                 </div>
 
@@ -689,6 +689,7 @@
 
 
 @section('script')
+<script src="{{ asset('public/assets/front/js/custom.js') }}"></script>
     <script>
         //payment
 
@@ -733,12 +734,14 @@
                     data: $("#payment-form").serialize(),
                     success: function(response) {
                         if (response.error == 'false') {
-                            loadCart();
                             round_success_noti(response.msg);
+                            emptyCart('{{csrf_token()}}');
+                            $(location).attr('href', baseUrl + "/thankyou");
                         }
                     },
                     error: function(response) {
-                        round_error_noti('Connection Error...');
+                        console.log(response.responseJSON.message)
+                        round_error_noti(response.responseJSON.message);
                     }
                 })
             });

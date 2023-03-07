@@ -175,22 +175,19 @@
 
             </div>
             <div class="container">
-                <div class="recently-viewed-outer category-design-outer">
-                <div class="traning-outer category-design-pd">
-                    <ul class="popular-course-resize"></ul>                    
-                </div>
+
+                <div class="traning-outer">
+                    <ul class="popular-course-resize"></ul>
+                    <div class="brws-more">
+                        <a href="{{ url('courses') }}">BROWSE <br>MORE COURSES</a>
+                    </div>
                 </div>
             </div>
             <div class="container">
-                
                 <div class="popular-course also-like">
-                    <h2 class="course-title">Top Trending Courses</h2>
-                    <div class="trendingCourse trending_pt_bot"></div>
+                    <h2 class="course-title">You May Also Like</h2>
+                    <div class="trendingCourse"></div>
                 </div>
-                <div class="brws-more">
-                    <a href="{{ url('courses') }}">BROWSE <br>MORE COURSES</a>
-                </div>
-                
             </div>
             @if ($data->homepage_middle_img != '')
                 <div class="expo-outer"
@@ -359,7 +356,6 @@
             var loggedIn = {{ auth()->check() ? 'true' : 'false' }};
             if (loggedIn) {
                 modal2.style.display = "block";
-                modal1.style.display = "none";
             } else {
                 modal1.style.display = "block";
                 modal2.style.display = "block";
