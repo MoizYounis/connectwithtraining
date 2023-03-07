@@ -3,15 +3,13 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Model\Purchase;
+use App\User;
 use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
-use App\Model\Purchase;
-use App\User;
 use Stripe;
-use Carbon\Carbon;
-
 class PaymentController extends Controller
 {
     public function __construct()
@@ -76,42 +74,69 @@ class PaymentController extends Controller
         // ]);
         // $data = $request->all();
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
-
-        $customer = Stripe\Customer::create(array(
-
-            "address" => [
-                "line1" => $request->address,
-                "postal_code" => $request->pincode,
-                "city" => $request->city,
-                "state" => $request->state,
-                "country" => $request->country,
-            ],
-            "email" => $request->email,
-            "name" => $request->fname . " " . $request->lname,
-            "source" => $request->stripeToken,
-        ));
         $user = User::where('id', auth()->user()->id)->first();
-        $user->stripe_id = $customer->id;
-        $user->save();
-        
+        if (empty($user->stripe_id)) {
+            $customer = Stripe\Customer::create(array(
+
+                "address" => [
+                    "line1" => $request->address,
+                    "postal_code" => $request->pincode,
+                    "city" => $request->city,
+                    "state" => $request->state,
+                    "country" => $request->country,
+                ],
+                "email" => $request->email,
+                "name" => $request->fname . " " . $request->lname,
+                "source" => $request->stripeToken,
+            ));
+
+            $user->stripe_id = $customer->id;
+            $user->save();
+        }
+        $user_exist = User::where('id', auth()->user()->id)->first();
         $charge = Stripe\Charge::create([
             'amount' => (int) $request->total_amount * 100,
             'currency' => 'usd',
-            'customer' => $customer->id,
+            'customer' => $user_exist->stripe_id,
             'description' => "Test Payment from connect with training",
         ]);
-        $date = date('Y-m-d');
-        for ($i=0; $i < (int)$request->number_of_installments; $i++) { 
-            Purchase::create([
-                'user_id' => auth()->user()->id,
-                'course_id' => json_encode($request->courses_id),
-                'price' => $request->total_amount,
-                'due_date' => date('Y-m-d', strtotime($date. ' + '.$i.' months')),
-                'total_courses_price' => $request->total_courses_price,
-                'status' => $i == 0 ? 'PAID' : 'PENDING'
-            ]);
+        
+        if ($charge->status == 'succeeded') {
+            $date = date('Y-m-d');
+            for ($i = 0; $i < (int) $request->number_of_installments; $i++) {
+                Purchase::create([
+                    'user_id' => auth()->user()->id,
+                    'course_id' => json_encode($request->courses_id),
+                    'price' => $request->total_amount,
+                    'due_date' => date('Y-m-d', strtotime($date . ' + ' . $i . ' months')),
+                    'total_courses_price' => $request->total_courses_price,
+                    'status' => $i == 0 ? 'PAID' : 'PENDING',
+                ]);
+            }
+
+            if (isset(Auth::user()->id) && Auth::user()->id != '') {
+                if (DB::table('cart')->where('user_id', Auth::user()->id)->delete()) {
+                    json_encode(['error' => 'false', 'msg' => 'Your cart is empty now!']);
+                } else {
+                    json_encode(['error' => 'true', 'msg' => 'Connection erroe!']);
+                }
+            } else {
+                if (Session::exists('cart')) {
+                    Session::flush("cart");
+                    json_encode(['error' => 'false', 'msg' => 'Your cart is empty now!']);
+                } else {
+                    json_encode(['error' => 'true', 'msg' => 'Your cart is empty!']);
+                }
+            }
+
+            if ($request->ajax()) {
+                return json_encode(['error' => 'false', 'msg' => 'Payment Successfully Done!']);
+            } else {
+                return redirect('thankyou');
+            }
+        } else {
+            return redirect()->back()->withErrors('Please Check your account. Payment cannot be successful!');
         }
-        return json_encode(['error' => 'false', 'msg' => 'Payment Successfully Done!']);
         // return redirect('thankyou');
     }
 

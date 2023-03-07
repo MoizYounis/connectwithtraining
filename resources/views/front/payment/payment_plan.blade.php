@@ -429,7 +429,7 @@
 
             <div class="col-md-9">
                 {{-- action="{{ url('pay') }}"  --}}
-                <form method="post" role="form" class="require-validation" data-cc-on-file="false"
+                <form method="post" role="form" action="{{ url('pay') }}" class="require-validation" data-cc-on-file="false"
                     data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
 
                     @csrf
@@ -568,7 +568,7 @@
                                             <lable class="control-lable">
                                                 Name on Card
                                             </lable>
-                                            <input type="text" size="4" class="form-control">
+                                            <input type="text" value="{{ auth()->user()->card_name ?? '' }}" size="4" class="form-control">
                                         </div>
                                     </div>
 
@@ -577,7 +577,7 @@
                                             <lable class="control-lable">
                                                 Card Number
                                             </lable>
-                                            <input type="text" size="4" class="form-control card_number"
+                                            <input type="text" size="4" value="{{ auth()->user()->card_number }}" class="form-control card_number"
                                                 size="20" autocomplete="off">
                                         </div>
                                     </div>
@@ -587,7 +587,7 @@
                                             <lable class="control-lable">
                                                 CVC
                                             </lable>
-                                            <input type="text" size="4" class="form-control card-cvc"
+                                            <input type="text" size="4"  class="form-control card-cvc"
                                                 size="4" placeholder="ex. 311">
                                         </div>
 
@@ -595,7 +595,7 @@
                                             <lable class="control-lable">
                                                 Expiration Month
                                             </lable>
-                                            <input type="text" size="4" class="form-control card-expiry-month"
+                                            <input type="text" size="4" value="{{ auth()->user()->expiry_month ?? '' }}" class="form-control card-expiry-month"
                                                 size="2" placeholder="MM">
                                         </div>
 
@@ -603,7 +603,7 @@
                                             <lable class="control-lable">
                                                 Expiration Year
                                             </lable>
-                                            <input type="text" size="4" class="form-control card-expiry-year"
+                                            <input type="text" size="4" value= {{ auth()->user()->expiry_year ?? '' }} class="form-control card-expiry-year"
                                                 size="4" placeholder="YYYY">
                                         </div>
                                     </div>
@@ -726,24 +726,23 @@
                         exp_year: $('.card-expiry-year').val(),
                     }, stripeResponseHandler);
                 }
-
-                $.ajax({
-                    type: "POST",
-                    url: baseUrl + "/pay",
-                    dataType: "json",
-                    data: $("#payment-form").serialize(),
-                    success: function(response) {
-                        if (response.error == 'false') {
-                            round_success_noti(response.msg);
-                            emptyCart('{{csrf_token()}}');
-                            $(location).attr('href', baseUrl + "/thankyou");
-                        }
-                    },
-                    error: function(response) {
-                        console.log(response.responseJSON.message)
-                        round_error_noti(response.responseJSON.message);
-                    }
-                })
+                
+                // $.ajax({
+                //     type: "POST",
+                //     url: baseUrl + "/pay",
+                //     dataType: "json",
+                //     data: $("#payment-form").serialize(),
+                //     success: function(response) {
+                //         if (response.error == 'false') {
+                //             round_success_noti(response.msg);
+                //             emptyCart('{{csrf_token()}}');
+                //             $(location).attr('href', baseUrl + "/thankyou");
+                //         }
+                //     },
+                //     error: function(response) {
+                //         round_error_noti(response.responseJSON.message);
+                //     }
+                // })
             });
 
             function stripeResponseHandler(status, response) {
@@ -754,6 +753,7 @@
                     var token = response['id'];
                     $form.find('input[type=text]').empty();
                     $form.append("<input type='hidden' name='stripeToken' value='" + token + "' />");
+                    $form.get(0).submit();
                 }
             }
         })

@@ -91,15 +91,15 @@ class UserController extends Controller
         $request->validate([
             'first_name' => 'required|max:10',
             'last_name' => 'required|max:10',
-            /*'city' => 'required',
+            'city' => 'required|max:10',
             'state' => 'required|max:10',
-            'pincode' => 'required|digits:10',*/
+            'pincode' => 'required|digits:6',
             'email' => ['required',
                 Rule::unique('users')->ignore(Auth::user()->id), 'email',
             ],
             'image' => 'image|mimes:jpeg,png,jpg|max:5120',
             'phone' => 'required', 'numeric', 'digits:10',
-            /*'address' => 'required|max:200',*/
+            'address' => 'required|max:200',
         ]);
 
         $profile = Auth::user();

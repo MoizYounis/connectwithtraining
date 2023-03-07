@@ -8,7 +8,6 @@ Route::get('read_blog/{id}', 'Front\HomeController@readBlog');
 Route::post('filterBy', 'Front\CourseController@filterBy');
 
 Route::post('subscribe', 'Front\HomeController@subscribe');
-
 //save review
 Route::post('review', 'Front\HomeController@review');
 
